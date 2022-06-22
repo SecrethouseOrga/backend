@@ -1,0 +1,1455 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentation for Secret House Game API.",
+    "version": "1.0.0",
+    "title": "Secret House Game"
+  },
+  "host": "api.secrethouse.online",
+  "tags": [
+    {
+      "name": "auth",
+      "description": "Everything about API authentication"
+    },
+    {
+      "name": "games",
+      "description": "Everything about your games"
+    },
+    {
+      "name": "players",
+      "description": "Everything about your players"
+    },
+    {
+      "name": "rooms",
+      "description": "Everything about your rooms"
+    },
+    {
+      "name": "roomGame",
+      "description": "Everything about your room games"
+    },
+    {
+      "name": "events",
+      "description": "Everything about your events"
+    },
+    {
+      "name": "buzzs",
+      "description": "Everything about your buzzes"
+    },
+    {
+      "name": "votes",
+      "description": "Everything about your votes"
+    },
+    {
+      "name": "nominations",
+      "description": "Everything about your nominations"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Register a new user",
+        "description": "",
+        "operationId": "register",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Login user",
+        "description": "",
+        "operationId": "login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            },
+            "headers": {
+              "X-Rate-Limit": {
+                "type": "integer",
+                "format": "int32",
+                "description": "calls per hour allowed by the user"
+              },
+              "X-Expires-After": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date in UTC when token expires"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/games/create": {
+      "post": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Create a new game",
+        "description": "",
+        "operationId": "createGame",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created game object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Game"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/games/game/{gameId}": {
+      "get": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Find game by ID",
+        "description": "Returns a single game",
+        "operationId": "getGameById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "ID of game to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Game"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/games/game/{gameId}/players": {
+      "get": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Find all players of a game by ID",
+        "description": "",
+        "operationId": "getAllPlayersGameById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "ID of the game",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Player"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/games/game/{gameId}/rooms": {
+      "get": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Find all rooms of a game by ID",
+        "description": "",
+        "operationId": "getAllRoomsGameById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "ID of the game",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/games/game/{gameId}/events": {
+      "get": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Find all events of a game by ID",
+        "description": "",
+        "operationId": "getAllEventsGameById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "ID of the game",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Event"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/games/game/{gameId}/secrets": {
+      "get": {
+        "tags": [
+          "games"
+        ],
+        "summary": "Find all secrets of a game by ID",
+        "description": "",
+        "operationId": "getAllSecretsGameById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "description": "ID of the game",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Secret"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/players/create": {
+      "post": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Create a new player",
+        "description": "",
+        "operationId": "createPlayer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created player object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlayerData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Player"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/players/player/{playerId}": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Find player by ID",
+        "description": "Returns a single player",
+        "operationId": "getPlayerById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "ID of player to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Player"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/players": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Finds all players",
+        "description": "",
+        "operationId": "findAllPlayers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Player"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/rooms/create": {
+      "post": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Create a new room",
+        "description": "",
+        "operationId": "createRoom",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created room object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoomData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Room"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/rooms": {
+      "get": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Get all rooms",
+        "description": "",
+        "operationId": "getAllRooms",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/rooms/room/{roomId}": {
+      "get": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Find room by ID",
+        "description": "Returns a single room",
+        "operationId": "getRoomById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "description": "ID of room to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Room"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/gameRoom/create": {
+      "post": {
+        "tags": [
+          "roomGame"
+        ],
+        "summary": "Create a new room game",
+        "description": "",
+        "operationId": "createRoomGame",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created room game object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoomGameData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/RoomGame"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/events/create": {
+      "post": {
+        "tags": [
+          "events"
+        ],
+        "summary": "Create a new event",
+        "description": "",
+        "operationId": "createEvent",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created event object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EventData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Event"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/events/event/{eventId}": {
+      "get": {
+        "tags": [
+          "events"
+        ],
+        "summary": "Find event by ID",
+        "description": "Returns a single event",
+        "operationId": "getEventById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "ID of event to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Event"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/buzzs/create": {
+      "post": {
+        "tags": [
+          "buzzs"
+        ],
+        "summary": "Create a new buzz",
+        "description": "",
+        "operationId": "createBuzz",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created buzz object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BuzzData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Buzz"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/buzzs/buzz/{buzzId}": {
+      "get": {
+        "tags": [
+          "buzzs"
+        ],
+        "summary": "Find buzz by ID",
+        "description": "Returns a single buzz",
+        "operationId": "getBuzzById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "buzzId",
+            "in": "path",
+            "description": "ID of buzz to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Buzz"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "buzzs"
+        ],
+        "summary": "Update an existing buzz",
+        "description": "",
+        "operationId": "updateBuzz",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "buzzId",
+            "in": "path",
+            "description": "ID of buzz to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Buzz"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/votes/create": {
+      "post": {
+        "tags": [
+          "votes"
+        ],
+        "summary": "Create a new vote",
+        "description": "",
+        "operationId": "createVote",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created vote object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VoteData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/votes/vote/{voteId}": {
+      "get": {
+        "tags": [
+          "votes"
+        ],
+        "summary": "Find vote by ID",
+        "description": "Returns a single vote",
+        "operationId": "getVoteById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "voteId",
+            "in": "path",
+            "description": "ID of vote to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Vote"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/nominations/create": {
+      "post": {
+        "tags": [
+          "nominations"
+        ],
+        "summary": "Create a new nomination",
+        "description": "",
+        "operationId": "createNomination",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created nomination object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NominationData"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Nomination"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/nominations/nomination/{nominationId}": {
+      "get": {
+        "tags": [
+          "nominations"
+        ],
+        "summary": "Find nomination by ID",
+        "description": "Returns a single nomination",
+        "operationId": "getNominationById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nominationId",
+            "in": "path",
+            "description": "ID of nomination to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Nomination"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "profilePic": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "UserData": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "marcel.jean"
+        },
+        "email": {
+          "type": "string",
+          "example": "marcel.jean@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "Mon.Super.Mot.De.Passe."
+        }
+      }
+    },
+    "LoginData": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "marcel.jean@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "Mon.Super.Mot.De.Passe."
+        }
+      }
+    },
+    "Game": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "maxPlayers": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "eventIntervalQty": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "eventIntervalUnity": {
+          "type": "string",
+          "description": "Delay Unities",
+          "enum": [
+            "MINUTES",
+            "HOURS",
+            "DAYS"
+          ]
+        },
+        "eliminationDelayQty": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "eliminationDelayUnity": {
+          "type": "string",
+          "description": "Delay Unities",
+          "enum": [
+            "MINUTES",
+            "HOURS",
+            "DAYS"
+          ]
+        }
+      }
+    },
+    "GameData": {
+      "type": "object",
+      "properties": {
+        "maxPlayers": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10
+        },
+        "eventIntervalQty": {
+          "type": "integer",
+          "format": "int64",
+          "example": 30
+        },
+        "eventIntervalUnity": {
+          "type": "string",
+          "example": "min"
+        },
+        "eliminationDelayQty": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10
+        },
+        "eliminationDelayUnity": {
+          "type": "string",
+          "example": "h"
+        }
+      }
+    },
+    "Player": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "jackpot": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "secret": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "isReady": {
+          "type": "boolean"
+        },
+        "isBuzzed": {
+          "type": "boolean"
+        },
+        "canBuzz": {
+          "type": "boolean"
+        },
+        "canBeBuzzed": {
+          "type": "boolean"
+        },
+        "isNominated": {
+          "type": "boolean"
+        },
+        "isEleminated": {
+          "type": "boolean"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Genders",
+          "enum": [
+            "MALE",
+            "FEMALE",
+            "OTHER"
+          ]
+        }
+      }
+    },
+    "PlayerData": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Marcel"
+        },
+        "secret": {
+          "type": "string",
+          "example": "J'aime la pizza à l'ananas"
+        },
+        "gender": {
+          "type": "string",
+          "example": "male"
+        }
+      }
+    },
+    "Room": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isSecret": {
+          "type": "boolean"
+        }
+      }
+    },
+    "RoomData": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "La Chambre des Secrets"
+        },
+        "isSecret": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "RoomGame": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isLocked": {
+          "type": "boolean"
+        }
+      }
+    },
+    "RoomGameData": {
+      "type": "object",
+      "properties": {
+        "isLocked": {
+          "type": "boolean",
+          "example": false
+        }
+      }
+    },
+    "Event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "content": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "description": "EventTypes",
+          "enum": [
+            "EVENT",
+            "NOMINATION",
+            "BUZZ",
+            "ELIMINATION"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "description": "EventStatus",
+          "enum": [
+            "CREATED",
+            "STARTED",
+            "ENDED",
+            "CANCELLED"
+          ]
+        }
+      }
+    },
+    "EventData": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "example": "Evenement mystère"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        }
+      }
+    },
+    "Buzz": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isConfirmed": {
+          "type": "boolean"
+        },
+        "secret": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "description": "BuzzStatus",
+          "enum": [
+            "created",
+            "started",
+            "confirmed",
+            "correct",
+            "semi-correct",
+            "wrong",
+            "cancelled"
+          ]
+        }
+      }
+    },
+    "BuzzData": {
+      "type": "object",
+      "properties": {
+        "secret": {
+          "type": "string",
+          "example": "Il aime la pizza à l'ananas"
+        },
+        "targetId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 3
+        }
+      }
+    },
+    "VoteData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "NominationData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Secret": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 4
+        },
+        "secret": {
+          "type": "string",
+          "example": "Je suis le christ cosmique"
+        }
+      }
+    },
+    "Token": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhAaC5jb20iLCJpZCI6MSwiaWF0IjoxNjU1ODAyMjg1LCJleHAiOjE2NTU4ODg2ODV9.XNBd0KipCHEPmf3Q2SpODhs2V5-dtH2Dudck8q0LXK8"
+        }
+      }
+    }
+  }
+}

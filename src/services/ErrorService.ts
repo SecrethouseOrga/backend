@@ -1,34 +1,62 @@
 import {ValidationError} from "@mikro-orm/core";
-import {ApiError, BadRequestError, ResourceNotFoundError} from "../errors";
+import {
+  ApiError,
+  BadRequestError,
+  ResourceNotFoundError,
+  ServerSideError,
+} from "../errors";
 
 export class ErrorService {
   static expTime= "24h";
 
-  static isBddError(error: any):boolean {
+  static handleError(error: any, operation= Operation.UPDATE) : ApiError {
+    if (this.isBddError(error)) {
+      switch (operation) {
+        case Operation.FIND:
+          return this.handleFindBddError(<ValidationError> error);
+        case Operation.UPDATE:
+          return this.handleUpdateBddError(<ValidationError>error);
+      }
+    }
+    return new ServerSideError();
+  }
+
+  private static isBddError(error: any):boolean {
     return error instanceof ValidationError;
   }
 
-  static handleFindBddError(error:ValidationError, message= "Invalid Data"): ApiError {
-    if (error.name === BddError.NotFoundError) {
+  private static handleFindBddError(error:ValidationError, message= "Invalid Parameters"): ApiError {
+    if (error.name === BddError.NOT_FOUND) {
       message = this.getNotFoundMessage(error.message);
       return new ResourceNotFoundError(message);
     }
     return new BadRequestError(message);
   }
 
-  static handleBddError(error:ValidationError, message= "Invalid Data",): ApiError {
+  private static handleUpdateBddError(error:ValidationError, message= "Invalid Data",): ApiError {
     console.log(error.message);
-    if (error.name === BddError.NotFoundError) {
-      message = this.getNotFoundMessage(error.message);
+    switch (error.name) {
+      case BddError.NOT_FOUND:
+        message = this.getNotFoundMessage(error.message);
+        break;
+      case BddError.VALIDATION:
+        message = "Wrong data type: Update/Create fail";
+        break;
     }
     return new BadRequestError(message);
   }
 
-  static getNotFoundMessage(message: string): string {
+  private static getNotFoundMessage(message: string): string {
     return message.split("(")[0];
   }
 }
 
-export enum BddError{
-  NotFoundError="NotFoundError",
+export enum Operation{
+  FIND="find",
+  UPDATE="update",
+  DELETE="delete"
+}
+enum BddError{
+  NOT_FOUND="NotFoundError",
+  VALIDATION="ValidationError"
 }

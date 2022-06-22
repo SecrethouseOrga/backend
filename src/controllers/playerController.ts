@@ -1,10 +1,15 @@
 import {Router} from "express";
 import {Game, Player, User} from "../bdd/entities";
 import {BddService} from "../services/BddService";
-import {authVerification} from "./commonMiddlewares/authMiddlewares";
-import {BadRequestError, ServerSideError} from "../errors";
+import {BadRequestError} from "../errors";
 import {castToPlayerData} from "../types/request/bodyData/PlayerData";
-import {checkId} from "./commonMiddlewares/paramMiddleware";
+import {ErrorService, Operation} from "../services/ErrorService";
+import {
+  authVerification,
+  checkId,
+  objectCreated,
+  sendData,
+} from "./commonMiddlewares";
 
 const router = Router();
 
@@ -14,36 +19,25 @@ router.post("/", authVerification, async function(req, res, next) {
   // FIXME : Serialize data of user
   const gender = Player.castToGenders(playerData.gender);
 
-  let user;
-  let game;
   try {
-    user = <User> await BddService.userHandler.findUserById(req.currentUser.id);
+    const user = <User> await BddService.userHandler.findUserById(req.currentUser.id);
+    const game = <Game> await BddService.gameHandler.findGameById(+req.body.gameId);
+    await BddService.playerHandler.createPlayer(playerData, user, game, gender);
   } catch (e) {
-    console.log(e);
-    throw new ServerSideError();
+    ErrorService.handleError(e);
   }
-  if (user === null) throw new BadRequestError("No User Found");
-
-  try {
-    game = <Game> await BddService.gameHandler.findGameById(+req.body.gameId);
-  } catch (e) {
-    console.log(e);
-    throw new ServerSideError();
-  }
-  if (game === null) throw new BadRequestError("No Game Found");
-
-  const player = await BddService.playerHandler.createPlayer(playerData, user, game, gender);
-
-  if (player != null) return res.status(200).send(player);
-  else throw new ServerSideError();
-});
+  next();
+}, objectCreated);
 
 router.get("/:id", checkId, async function(req, res, next) {
   const idPlayer: number = +req.params.id;
-
-  const player = <Player> await BddService.playerHandler.findPlayerById(idPlayer);
-  return res.status(200).send(player);
-});
+  try {
+    req.dataToSend = <Player> await BddService.playerHandler.findPlayerById(idPlayer);
+  } catch (e) {
+    ErrorService.handleError(e, Operation.FIND);
+  }
+  next();
+}, sendData);
 
 /* router.get("/", authVerification, async function(req, res, next) {
   const idUser: number = req.currentUser.id;

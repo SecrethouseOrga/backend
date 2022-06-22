@@ -2,8 +2,7 @@ import {Router} from "express";
 import {BddService} from "../services/BddService";
 import {BadRequestError} from "../errors";
 import {castToLoginData, castToUserData} from "../types/request/bodyData";
-import {authVerification, tokenGeneration} from "./commonMiddlewares/authMiddlewares";
-import {ValidationError} from "@mikro-orm/core";
+import {authVerification, tokenGeneration} from "./commonMiddlewares";
 import {ErrorService} from "../services/ErrorService";
 const router = Router();
 
@@ -17,8 +16,7 @@ router.post("/register", async function(req, res, next) {
       id: user.id,
     };
   } catch (e) {
-    console.log(e);
-    throw new BadRequestError("User could not be created");
+    throw ErrorService.handleError(e);
   }
   next();
 }, tokenGeneration);
@@ -33,8 +31,7 @@ router.post("/login", async function(req, res, next) {
       id: user.id,
     };
   } catch (e) {
-    const error = <ValidationError>e;
-    throw ErrorService.handleBddError(error);
+    throw ErrorService.handleError(e);
   }
   next();
 }, tokenGeneration);

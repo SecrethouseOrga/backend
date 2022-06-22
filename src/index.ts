@@ -9,8 +9,8 @@ import {config} from "dotenv";
 config();
 
 const app = express();
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./doc/swagger.json');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./doc/swagger.json");
 
 app.use(express.json());
 app.use(async (req, res, next) =>{
@@ -22,10 +22,10 @@ app.use(async (req, res, next) =>{
   }
   RequestContext.create(BddService.entityManager, next);
 });
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(controllers);
-app.listen(3000, () => {
-  console.log(`Example app listening on port ${3000}`);
+app.listen(80, () => {
+  console.log(`Example app listening on port ${80}`);
 });
 /* const cors = require('cors')({origin: true});
 app.use(cors);*/

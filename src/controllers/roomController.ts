@@ -1,36 +1,42 @@
 import {Router} from "express";
 import {Room} from "../bdd/entities";
-import {BadRequestError} from "../errors";
 import {BddService} from "../services/BddService";
-import {authVerification} from "./commonMiddlewares/authMiddlewares";
+import {
+  authVerification,
+  checkId,
+  objectCreated,
+  sendData,
+} from "./commonMiddlewares";
+import {ErrorService, Operation} from "../services/ErrorService";
 
 const router = Router();
 
 router.post("/", authVerification, async function(req, res, next) {
-  const room = await BddService.roomHandler.createRoom(req.body);
-
-  if (room != null) return res.status(200).send(room);
-  else throw new BadRequestError("Invalid Room Data");
-});
+  try {
+    await BddService.roomHandler.createRoom(req.body);
+  } catch (e) {
+    ErrorService.handleError(e);
+  }
+  next();
+}, objectCreated);
 
 router.get("/", authVerification, async function(req, res, next) {
-  const rooms = await BddService.roomHandler.findAll();
-  if (rooms != null) {
-    return res.status(200).send(rooms);
-  } else {
-    throw new BadRequestError("No Rooms available");
+  try {
+    req.dataToSend = await BddService.roomHandler.findAll();
+  } catch (e) {
+    ErrorService.handleError(e, Operation.FIND);
   }
-});
+  next();
+}, sendData);
 
-router.get("/:id", authVerification, async function(req, res, next) {
+router.get("/:id", authVerification, checkId, async function(req, res, next) {
   const idRoom: number = +req.params.id;
-
-  if (isNaN(idRoom) || idRoom === 0) {
-    throw new BadRequestError("Room id not valid");
+  try {
+    req.dataToSend = <Room> await BddService.roomHandler.findRoomById(idRoom);
+  } catch (e) {
+    ErrorService.handleError(e, Operation.FIND);
   }
-
-  const room = <Room> await BddService.roomHandler.findRoomById(idRoom);
-  return res.status(200).send(room);
-});
+  next();
+}, sendData);
 
 export {router as roomController};

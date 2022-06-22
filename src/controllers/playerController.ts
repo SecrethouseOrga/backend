@@ -39,15 +39,4 @@ router.get("/:id", checkId, async function(req, res, next) {
   next();
 }, sendData);
 
-/* router.get("/", authVerification, async function(req, res, next) {
-  const idUser: number = req.currentUser.id;
-
-  if (isNaN(idUser) || idUser === 0) {
-    throw new BadRequestError("User id not valid");
-  }
-
-  const player = <Player> await BddService.playerHandler.findPlayerByUser(idUser);
-  return res.status(200).send(player);
-});*/
-
 export {router as playerController};

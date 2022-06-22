@@ -8,7 +8,7 @@ import {checkId} from "../commonMiddlewares/paramMiddleware";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const eventData = castToEventData(req.body);
   if (eventData === null) throw new BadRequestError("Invalid Event Data");
   const buzzData = castToBuzzData(req.body);

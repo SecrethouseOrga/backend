@@ -14,5 +14,5 @@ router.put("/:id", checkId, async function(req, res, next) {
     throw new BadRequestError("Event could not be updated");
   }
 });
-router.use("/buzz", buzzController);
+router.use("/buzzs", buzzController);
 export {router as eventController};

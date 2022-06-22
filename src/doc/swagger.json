@@ -136,7 +136,7 @@
         }
       }
     },
-    "/games/create": {
+    "/games": {
       "post": {
         "tags": [
           "games"
@@ -177,7 +177,7 @@
         }
       }
     },
-    "/games/game/{gameId}": {
+    "/games/{gameId}": {
       "get": {
         "tags": [
           "games"
@@ -220,7 +220,7 @@
         }
       }
     },
-    "/games/game/{gameId}/players": {
+    "/games/{gameId}/players": {
       "get": {
         "tags": [
           "games"
@@ -263,7 +263,7 @@
         }
       }
     },
-    "/games/game/{gameId}/rooms": {
+    "/games/{gameId}/rooms": {
       "get": {
         "tags": [
           "games"
@@ -306,7 +306,7 @@
         }
       }
     },
-    "/games/game/{gameId}/events": {
+    "/games/{gameId}/events": {
       "get": {
         "tags": [
           "games"
@@ -349,7 +349,7 @@
         }
       }
     },
-    "/games/game/{gameId}/secrets": {
+    "/games/{gameId}/secrets": {
       "get": {
         "tags": [
           "games"
@@ -392,7 +392,7 @@
         }
       }
     },
-    "/players/create": {
+    "/players": {
       "post": {
         "tags": [
           "players"
@@ -433,7 +433,7 @@
         }
       }
     },
-    "/players/player/{playerId}": {
+    "/players/{playerId}": {
       "get": {
         "tags": [
           "players"
@@ -476,40 +476,7 @@
         }
       }
     },
-    "/players": {
-      "get": {
-        "tags": [
-          "players"
-        ],
-        "summary": "Finds all players",
-        "description": "",
-        "operationId": "findAllPlayers",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Ok",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Player"
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "500": {
-            "description": "Internal server error"
-          }
-        }
-      }
-    },
-    "/rooms/create": {
+    "/rooms/": {
       "post": {
         "tags": [
           "rooms"
@@ -583,7 +550,7 @@
         }
       }
     },
-    "/rooms/room/{roomId}": {
+    "/rooms/{roomId}": {
       "get": {
         "tags": [
           "rooms"
@@ -626,7 +593,7 @@
         }
       }
     },
-    "/gameRoom/create": {
+    "/gameRoom": {
       "post": {
         "tags": [
           "roomGame"
@@ -667,7 +634,7 @@
         }
       }
     },
-    "/events/create": {
+    "/events": {
       "post": {
         "tags": [
           "events"
@@ -708,7 +675,7 @@
         }
       }
     },
-    "/events/event/{eventId}": {
+    "/events/{eventId}": {
       "get": {
         "tags": [
           "events"
@@ -751,7 +718,7 @@
         }
       }
     },
-    "/buzzs/create": {
+    "/buzzs": {
       "post": {
         "tags": [
           "buzzs"
@@ -792,7 +759,7 @@
         }
       }
     },
-    "/buzzs/buzz/{buzzId}": {
+    "/buzzs/{buzzId}": {
       "get": {
         "tags": [
           "buzzs"
@@ -876,7 +843,7 @@
         }
       }
     },
-    "/votes/create": {
+    "/votes": {
       "post": {
         "tags": [
           "votes"
@@ -917,7 +884,7 @@
         }
       }
     },
-    "/votes/vote/{voteId}": {
+    "/votes/{voteId}": {
       "get": {
         "tags": [
           "votes"
@@ -960,7 +927,7 @@
         }
       }
     },
-    "/nominations/create": {
+    "/nominations": {
       "post": {
         "tags": [
           "nominations"
@@ -1001,7 +968,7 @@
         }
       }
     },
-    "/nominations/nomination/{nominationId}": {
+    "/nominations/{nominationId}": {
       "get": {
         "tags": [
           "nominations"

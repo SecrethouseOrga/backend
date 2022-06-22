@@ -6,7 +6,7 @@ import {BadRequestError} from "../errors";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const game = <Game> await BddService.gameHandler.findGameById(req.body.gameId);
 
   if (game === null) {

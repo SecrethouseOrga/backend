@@ -45,7 +45,7 @@ router.get("/:id", checkId, async function(req, res, next) {
   return res.status(200).send(player);
 });
 
-router.get("/", authVerification, async function(req, res, next) {
+/* router.get("/", authVerification, async function(req, res, next) {
   const idUser: number = req.currentUser.id;
 
   if (isNaN(idUser) || idUser === 0) {
@@ -54,6 +54,6 @@ router.get("/", authVerification, async function(req, res, next) {
 
   const player = <Player> await BddService.playerHandler.findPlayerByUser(idUser);
   return res.status(200).send(player);
-});
+});*/
 
 export {router as playerController};

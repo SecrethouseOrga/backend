@@ -11,7 +11,7 @@ import {authController} from "./authController";
 const router = Router();
 
 router.use("/auth", authController);
-router.use("/services", authController);
+// router.use("/services", authController);
 router.use("/games", gameController);
 router.use("/players", playerController);
 router.use("/events", eventController);

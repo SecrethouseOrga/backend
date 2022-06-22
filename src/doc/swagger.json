@@ -69,7 +69,7 @@
             "description": "Created user object",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/definitions/UserData"
             }
           }
         ],

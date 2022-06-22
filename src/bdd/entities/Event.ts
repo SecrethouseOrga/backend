@@ -2,7 +2,6 @@ import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {EventData} from "../../types/request/bodyData";
 import {Game} from "./Game";
 import {Player} from "./Player";
-import {User} from "./User";
 
 @Entity()
 export class Event {
@@ -19,9 +18,6 @@ export class Event {
       content!: string;
 
     @ManyToOne()
-      user!: User;
-
-    @ManyToOne()
       player!: Player;
 
     @ManyToOne()
@@ -33,10 +29,9 @@ export class Event {
     @Enum(() => EventStatus)
       status!: string;
 
-    constructor(eventData: EventData, player: Player, user: User, game: Game, eventType: EventTypes) {
+    constructor(eventData: EventData, player: Player, game: Game, eventType: EventTypes) {
       this.content = eventData.content;
       this.player = player;
-      this.user = user;
       this.game = game;
       this.type = eventType;
       this.status = EventStatus.STARTED;

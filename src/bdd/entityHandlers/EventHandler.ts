@@ -1,5 +1,5 @@
 import {EntityHandler} from "./EntityHandler";
-import {Event, /* EventStatus,*/ EventTypes, Game, Player, User} from "../entities";
+import {Event, /* EventStatus,*/ EventTypes, Game, Player} from "../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {EventData} from "../../types/request/bodyData";
 import {LoadStrategy, wrap} from "@mikro-orm/core";
@@ -9,8 +9,8 @@ export class EventHandler extends EntityHandler {
     super(entityManager, Event);
   }
 
-  async createEvent(payload: EventData, player: Player, user: User, game: Game, eventType: EventTypes) {
-    const event = new Event(payload, player, user, game, eventType);
+  async createEvent(payload: EventData, player: Player, game: Game, eventType: EventTypes) {
+    const event = new Event(payload, player, game, eventType);
     await this.repository.persistAndFlush(event);
     return event;
   }

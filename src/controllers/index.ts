@@ -11,12 +11,12 @@ import {authController} from "./authController";
 const router = Router();
 
 router.use("/auth", authController);
-router.use("/services", authController);
+// router.use("/services", authController);
 router.use("/games", gameController);
 router.use("/players", playerController);
 router.use("/events", eventController);
 router.use("/rooms", roomController);
-router.use("/gameRoom", roomGameController);
+router.use("/gameRooms", roomGameController);
 router.use("*", (req, res, next) => {
   throw new RouteNotFoundError();
 });

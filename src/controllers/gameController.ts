@@ -9,7 +9,7 @@ import {NotFoundError} from "@mikro-orm/core";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const gameData = castToGameData(req.body);
   if (gameData === null) throw new BadRequestError("Invalid Game Data");
 

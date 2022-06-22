@@ -6,7 +6,7 @@ import {authVerification} from "./commonMiddlewares/authMiddlewares";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const room = await BddService.roomHandler.createRoom(req.body);
 
   if (room != null) return res.status(200).send(room);
@@ -22,7 +22,7 @@ router.get("/", authVerification, async function(req, res, next) {
   }
 });
 
-router.get("/room/:id", authVerification, async function(req, res, next) {
+router.get("/:id", authVerification, async function(req, res, next) {
   const idRoom: number = +req.params.id;
 
   if (isNaN(idRoom) || idRoom === 0) {

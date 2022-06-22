@@ -8,7 +8,7 @@ import {checkId} from "./commonMiddlewares/paramMiddleware";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const playerData = castToPlayerData(req.body);
   if (playerData === null) throw new BadRequestError("Invalid Player Data");
   // FIXME : Serialize data of user
@@ -38,14 +38,14 @@ router.post("/create", authVerification, async function(req, res, next) {
   else throw new ServerSideError();
 });
 
-router.get("/player/:id", checkId, async function(req, res, next) {
+router.get("/:id", checkId, async function(req, res, next) {
   const idPlayer: number = +req.params.id;
 
   const player = <Player> await BddService.playerHandler.findPlayerById(idPlayer);
   return res.status(200).send(player);
 });
 
-router.get("/", authVerification, async function(req, res, next) {
+/* router.get("/", authVerification, async function(req, res, next) {
   const idUser: number = req.currentUser.id;
 
   if (isNaN(idUser) || idUser === 0) {
@@ -54,6 +54,6 @@ router.get("/", authVerification, async function(req, res, next) {
 
   const player = <Player> await BddService.playerHandler.findPlayerByUser(idUser);
   return res.status(200).send(player);
-});
+});*/
 
 export {router as playerController};

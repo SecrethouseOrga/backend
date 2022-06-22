@@ -8,7 +8,7 @@ import {checkId} from "../commonMiddlewares/paramMiddleware";
 
 const router = Router();
 
-router.post("/create", authVerification, async function(req, res, next) {
+router.post("/", authVerification, async function(req, res, next) {
   const eventData = castToEventData(req.body);
   if (eventData === null) throw new BadRequestError("Invalid Event Data");
   const buzzData = castToBuzzData(req.body);
@@ -18,9 +18,8 @@ router.post("/create", authVerification, async function(req, res, next) {
   try {
     const player = <Player> await BddService.playerHandler.findPlayerByUser(userId);
     const game = player.game;
-    const user = player.user;
     const target = <Player> await BddService.playerHandler.findPlayerById(buzzData.targetId);
-    const event = await BddService.eventHandler.createEvent(eventData, player, user, game, EventTypes.BUZZ);
+    const event = await BddService.eventHandler.createEvent(eventData, player, game, EventTypes.BUZZ);
     const buzz = await BddService.buzzHandler.createBuzz(buzzData, player, target, event);
     // TODO: remove 5k from buzzer
     return res.status(200).send(buzz);

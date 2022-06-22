@@ -1,9 +1,9 @@
-import {EntityHandler} from "./EntityHandler";
-import {Game, DelayUnities, User} from "../entities";
+import {EntityService} from "./EntityService";
+import {Game, DelayUnities, User} from "../../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {GameData} from "../../types/request/bodyData";
 
-export class GameHandler extends EntityHandler {
+export class GameService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, Game);
   }

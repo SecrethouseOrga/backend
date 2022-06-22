@@ -1,11 +1,11 @@
 import {EntityManager} from "@mikro-orm/knex";
 import {PlayerData} from "../../types/request/bodyData/PlayerData";
-import {Game, Genders, User} from "../entities";
-import {Player} from "../entities/Player";
-import {EntityHandler} from "./EntityHandler";
+import {Game, Genders, User} from "../../entities";
+import {Player} from "../../entities/Player";
+import {EntityService} from "./EntityService";
 import {LoadStrategy} from "@mikro-orm/core";
 
-export class PlayerHandler extends EntityHandler {
+export class PlayerService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, Player);
   }

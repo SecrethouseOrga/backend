@@ -1,5 +1,5 @@
 import {Entity, Enum, PrimaryKey, Property, Unique} from "@mikro-orm/core";
-import {UserData} from "../../types/request/bodyData";
+import {UserData} from "../types/request/bodyData";
 
 @Entity()
 export class User {

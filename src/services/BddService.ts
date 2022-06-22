@@ -1,69 +1,69 @@
 import {EntityManager, MySqlDriver} from "@mikro-orm/mysql";
 import {MikroORM, Options} from "@mikro-orm/core";
-import {BuzzHandler, EventHandler, GameHandler, PlayerHandler, RoomGameHandler, RoomHandler, UserHandler} from "../bdd/entityHandlers";
+import {BuzzService, EventService, GameService, PlayerService, RoomGameService, RoomService, UserService} from "./entityServices";
 import mikroOrmConfig from "../mikroOrm.config";
 
 export class BddService {
   static entityManager: EntityManager;
-  private static user: UserHandler;
+  private static user: UserService;
   private static orm: MikroORM<MySqlDriver>;
-  private static game: GameHandler;
-  private static player: PlayerHandler;
-  private static event: EventHandler;
-  private static room: RoomHandler;
-  private static roomGame: RoomGameHandler;
-  private static buzz: BuzzHandler;
+  private static game: GameService;
+  private static player: PlayerService;
+  private static event: EventService;
+  private static room: RoomService;
+  private static roomGame: RoomGameService;
+  private static buzz: BuzzService;
 
   static async createOrm() {
     this.orm = await MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfig());
     this.entityManager = this.orm.em as EntityManager;
   }
 
-  static get gameHandler(): GameHandler {
+  static get gameHandler(): GameService {
     if (this.game == null) {
-      this.game = new GameHandler(this.entityManager);
+      this.game = new GameService(this.entityManager);
     }
     return this.game;
   }
 
-  static get playerHandler(): PlayerHandler {
+  static get playerHandler(): PlayerService {
     if (this.player == null) {
-      this.player = new PlayerHandler(this.entityManager);
+      this.player = new PlayerService(this.entityManager);
     }
     return this.player;
   }
 
-  static get userHandler(): UserHandler {
+  static get userHandler(): UserService {
     if (this.user == null) {
-      this.user = new UserHandler(this.entityManager);
+      this.user = new UserService(this.entityManager);
     }
     return this.user;
   }
 
-  static get roomHandler(): RoomHandler {
+  static get roomHandler(): RoomService {
     if (this.room == null) {
-      this.room = new RoomHandler(this.entityManager);
+      this.room = new RoomService(this.entityManager);
     }
     return this.room;
   }
 
-  static get eventHandler(): EventHandler {
+  static get eventHandler(): EventService {
     if (this.event == null) {
-      this.event = new EventHandler(this.entityManager);
+      this.event = new EventService(this.entityManager);
     }
     return this.event;
   }
 
-  static get roomGameHandler(): RoomGameHandler {
+  static get roomGameHandler(): RoomGameService {
     if (this.roomGame == null) {
-      this.roomGame = new RoomGameHandler(this.entityManager);
+      this.roomGame = new RoomGameService(this.entityManager);
     }
     return this.roomGame;
   }
 
-  static get buzzHandler(): BuzzHandler {
+  static get buzzHandler(): BuzzService {
     if (this.buzz == null) {
-      this.buzz = new BuzzHandler(this.entityManager);
+      this.buzz = new BuzzService(this.entityManager);
     }
     return this.buzz;
   }

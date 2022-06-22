@@ -1,13 +1,12 @@
 import {Router} from "express";
-import {Room} from "../bdd/entities";
-import {BddService} from "../services/BddService";
+import {Room} from "../entities";
+import {ErrorService, Operation, BddService} from "../services";
 import {
   authVerification,
   checkId,
   objectCreated,
   sendData,
 } from "./commonMiddlewares";
-import {ErrorService, Operation} from "../services/ErrorService";
 
 const router = Router();
 

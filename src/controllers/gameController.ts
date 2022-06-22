@@ -1,9 +1,8 @@
 import {Router} from "express";
-import {DelayUnities, Game, Player, Room, User} from "../bdd/entities";
-import {BddService} from "../services/BddService";
+import {DelayUnities, Game, Player, Room, User} from "../entities";
 import {BadRequestError} from "../errors";
 import {castToGameData} from "../types/request/bodyData";
-import {ErrorService, Operation} from "../services/ErrorService";
+import {ErrorService, BddService, Operation} from "../services";
 import {checkId, sendData, objectCreated, authVerification} from "./commonMiddlewares";
 
 const router = Router();
@@ -12,7 +11,6 @@ router.post("/", authVerification, async function(req, res, next) {
   const gameData = castToGameData(req.body);
   if (gameData === null) throw new BadRequestError("Invalid Game Data");
 
-  // FIXME : Serialize data of user
   try {
     const user = <User> await BddService.userHandler.findUserById(req.currentUser.id);
     const eliminationDelayUnity: DelayUnities = Game.castToDelayUnities(gameData.eliminationDelayUnity);

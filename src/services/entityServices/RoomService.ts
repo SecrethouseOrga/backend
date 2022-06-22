@@ -1,9 +1,9 @@
-import {EntityHandler} from "./EntityHandler";
-import {Room} from "../entities";
+import {EntityService} from "./EntityService";
+import {Room} from "../../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {castToRoomData} from "../../types/request/bodyData";
 
-export class RoomHandler extends EntityHandler {
+export class RoomService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, Room);
   }

@@ -1,7 +1,7 @@
 import {Router} from "express";
-import {Buzz, BuzzStatus, EventTypes, Player} from "../../bdd/entities";
+import {Buzz, BuzzStatus, EventTypes, Player} from "../../entities";
 import {BadRequestError} from "../../errors";
-import {BddService} from "../../services/BddService";
+import {BddService, ErrorService} from "../../services";
 import {castToBuzzData, castToEventData} from "../../types/request/bodyData";
 import {
   checkId,
@@ -9,7 +9,6 @@ import {
   sendData,
   objectCreated,
 } from "../commonMiddlewares";
-import {ErrorService} from "../../services/ErrorService";
 
 const router = Router();
 

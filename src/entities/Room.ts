@@ -1,5 +1,5 @@
 import {Entity, PrimaryKey, Property} from "@mikro-orm/core";
-import {RoomData} from "../../types/request/bodyData";
+import {RoomData} from "../types/request/bodyData";
 
 @Entity()
 export class Room {

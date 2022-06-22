@@ -7,7 +7,7 @@ import {
   Unique,
 } from "@mikro-orm/core";
 import {User} from "./User";
-import {GameData} from "../../types/request/bodyData";
+import {GameData} from "../types/request/bodyData";
 
 @Entity()
 export class Game {

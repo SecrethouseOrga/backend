@@ -1,9 +1,8 @@
 import {Router} from "express";
-import {Game, Player, User} from "../bdd/entities";
-import {BddService} from "../services/BddService";
+import {Game, Player, User} from "../entities";
 import {BadRequestError} from "../errors";
 import {castToPlayerData} from "../types/request/bodyData/PlayerData";
-import {ErrorService, Operation} from "../services/ErrorService";
+import {ErrorService, Operation, BddService} from "../services";
 import {
   authVerification,
   checkId,

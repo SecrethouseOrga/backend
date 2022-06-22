@@ -1,10 +1,10 @@
-import {EntityHandler} from "./EntityHandler";
+import {EntityService} from "./EntityService";
 import {EntityManager} from "@mikro-orm/mysql";
-import {User, UserRole} from "../entities";
+import {User, UserRole} from "../../entities";
 import {UserData} from "../../types/request/bodyData";
 
 
-export class UserHandler extends EntityHandler {
+export class UserService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, User);
   }

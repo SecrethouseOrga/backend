@@ -1,9 +1,9 @@
-import {Game, Room, RoomGame} from "../entities";
+import {Game, Room, RoomGame} from "../../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {LoadStrategy} from "@mikro-orm/core";
-import {EntityHandler} from "./EntityHandler";
+import {EntityService} from "./EntityService";
 
-export class RoomGameHandler extends EntityHandler {
+export class RoomGameService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, RoomGame);
   }

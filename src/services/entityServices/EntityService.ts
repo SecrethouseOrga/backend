@@ -1,7 +1,7 @@
 import {EntityManager} from "@mikro-orm/mysql";
 import {AnyEntity, EntityName, EntityRepository} from "@mikro-orm/core";
 
-export class EntityHandler {
+export class EntityService {
   em:EntityManager;
   repository: EntityRepository<AnyEntity>;
   constructor(entityManager:EntityManager, entityName: EntityName<AnyEntity>) {

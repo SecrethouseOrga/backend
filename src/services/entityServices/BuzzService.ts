@@ -1,10 +1,10 @@
-import {EntityHandler} from "./EntityHandler";
-import {Buzz, Event, Player} from "../entities";
+import {EntityService} from "./EntityService";
+import {Buzz, Event, Player} from "../../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {LoadStrategy, wrap} from "@mikro-orm/core";
 import {BuzzData} from "../../types/request/bodyData";
 
-export class BuzzHandler extends EntityHandler {
+export class BuzzService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, Buzz);
   }

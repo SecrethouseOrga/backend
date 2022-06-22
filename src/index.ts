@@ -2,7 +2,7 @@ require("express-async-errors");
 import * as express from "express";
 import {RequestContext} from "@mikro-orm/core";
 import controllers from "./controllers";
-import {BddService} from "./services/BddService";
+import {BddService, LoggerService} from "./services";
 import {ServerSideError} from "./errors";
 import {config} from "dotenv";
 
@@ -14,6 +14,7 @@ const swaggerDocument = require("./doc/swagger.json");
 
 app.use(express.json());
 app.use(async (req, res, next) =>{
+  LoggerService.createLogger();
   try {
     await BddService.createOrm();
   } catch (e) {

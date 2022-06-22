@@ -1,4 +1,4 @@
-import {Buzz, Event, Game, Player, Room, RoomGame, User} from "./bdd/entities";
+import {Buzz, Event, Game, Player, Room, RoomGame, User} from "./entities";
 import {TsMorphMetadataProvider} from "@mikro-orm/reflection";
 import {Options} from "@mikro-orm/core";
 

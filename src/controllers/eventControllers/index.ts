@@ -1,8 +1,7 @@
 import {Router} from "express";
 import {buzzController} from "./buzzController";
-import {BddService} from "../../services/BddService";
+import {BddService, ErrorService} from "../../services";
 import {objectCreated, checkId} from "../commonMiddlewares";
-import {ErrorService} from "../../services/ErrorService";
 
 const router = Router();
 router.put("/:id", checkId, async function(req, res, next) {

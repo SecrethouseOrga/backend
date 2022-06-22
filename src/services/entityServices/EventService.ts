@@ -1,10 +1,10 @@
-import {EntityHandler} from "./EntityHandler";
-import {Event, /* EventStatus,*/ EventTypes, Game, Player} from "../entities";
+import {EntityService} from "./EntityService";
+import {Event, /* EventStatus,*/ EventTypes, Game, Player} from "../../entities";
 import {EntityManager} from "@mikro-orm/mysql";
 import {EventData} from "../../types/request/bodyData";
 import {LoadStrategy, wrap} from "@mikro-orm/core";
 
-export class EventHandler extends EntityHandler {
+export class EventService extends EntityService {
   constructor(entityManager: EntityManager) {
     super(entityManager, Event);
   }

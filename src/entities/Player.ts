@@ -1,7 +1,7 @@
 import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {User} from "./User";
 import {Game} from "./Game";
-import {PlayerData} from "../../types/request/bodyData/PlayerData";
+import {PlayerData} from "../types/request/bodyData/PlayerData";
 
 @Entity()
 export class Player {

@@ -1,9 +1,8 @@
 import {Router} from "express";
-import {BddService} from "../services/BddService";
+import {BddService, ErrorService} from "../services";
 import {BadRequestError} from "../errors";
 import {castToLoginData, castToUserData} from "../types/request/bodyData";
 import {authVerification, tokenGeneration} from "./commonMiddlewares";
-import {ErrorService} from "../services/ErrorService";
 const router = Router();
 
 router.post("/register", async function(req, res, next) {

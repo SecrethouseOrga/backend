@@ -1,8 +1,7 @@
 import {Router} from "express";
-import {Game, Room} from "../bdd/entities";
-import {BddService} from "../services/BddService";
+import {Game, Room} from "../entities";
+import {BddService, ErrorService} from "../services";
 import {objectCreated, authVerification} from "./commonMiddlewares";
-import {ErrorService} from "../services/ErrorService";
 
 const router = Router();
 

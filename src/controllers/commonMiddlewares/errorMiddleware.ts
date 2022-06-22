@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from "express";
-import {ApiError} from "../../errors/ApiError";
+import {ApiError} from "../../errors";
 
 export function errorHandler(err: Error, req : Request, res: Response, next: NextFunction) {
   {

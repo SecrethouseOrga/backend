@@ -21,10 +21,10 @@ router.post("/", authVerification, async function(req, res, next) {
 
   try {
     const user = <User> await BddService.userHandler.findUserById(req.currentUser.id);
-    const game = <Game> await BddService.gameHandler.findGameById(+req.body.gameId);
+    const game = <Game> await BddService.gameHandler.findGameByCode(playerData.gameCode);
     await BddService.playerHandler.createPlayer(playerData, user, game, gender);
   } catch (e) {
-    ErrorService.handleError(e);
+    throw ErrorService.handleError(e);
   }
   next();
 }, objectCreated);
@@ -34,7 +34,7 @@ router.get("/:id", checkId, async function(req, res, next) {
   try {
     req.dataToSend = <Player> await BddService.playerHandler.findPlayerById(idPlayer);
   } catch (e) {
-    ErrorService.handleError(e, Operation.FIND);
+    throw ErrorService.handleError(e, Operation.FIND);
   }
   next();
 }, sendData);

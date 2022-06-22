@@ -12,7 +12,7 @@ router.post("/", authVerification, async function(req, res, next) {
     const room = <Room> await BddService.roomHandler.findRoomById(req.body.roomId);
     await BddService.roomGameHandler.createRoomGame(room, game);
   } catch (e) {
-    ErrorService.handleError(e);
+    throw ErrorService.handleError(e);
   }
   next();
 }, objectCreated);

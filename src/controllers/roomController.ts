@@ -15,7 +15,7 @@ router.post("/", authVerification, async function(req, res, next) {
   try {
     await BddService.roomHandler.createRoom(req.body);
   } catch (e) {
-    ErrorService.handleError(e);
+    throw ErrorService.handleError(e);
   }
   next();
 }, objectCreated);
@@ -24,7 +24,7 @@ router.get("/", authVerification, async function(req, res, next) {
   try {
     req.dataToSend = await BddService.roomHandler.findAll();
   } catch (e) {
-    ErrorService.handleError(e, Operation.FIND);
+    throw ErrorService.handleError(e, Operation.FIND);
   }
   next();
 }, sendData);
@@ -34,7 +34,7 @@ router.get("/:id", authVerification, checkId, async function(req, res, next) {
   try {
     req.dataToSend = <Room> await BddService.roomHandler.findRoomById(idRoom);
   } catch (e) {
-    ErrorService.handleError(e, Operation.FIND);
+    throw ErrorService.handleError(e, Operation.FIND);
   }
   next();
 }, sendData);

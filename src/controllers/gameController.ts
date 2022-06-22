@@ -17,9 +17,10 @@ router.post("/", authVerification, async function(req, res, next) {
     const user = <User> await BddService.userHandler.findUserById(req.currentUser.id);
     const eliminationDelayUnity: DelayUnities = Game.castToDelayUnities(gameData.eliminationDelayUnity);
     const eventIntervalUnity: DelayUnities = Game.castToDelayUnities(gameData.eventIntervalUnity);
-    await BddService.gameHandler.createGame(gameData, user, eventIntervalUnity, eliminationDelayUnity);
-    // TODO: send a code
-    req.dataToSend = "code";
+    let code = Date.now().toString(36).substr(2, 10);
+    code = "#"+ code.toUpperCase();
+    await BddService.gameHandler.createGame(gameData, user, code, eventIntervalUnity, eliminationDelayUnity);
+    req.dataToSend = code.toUpperCase();
   } catch (e) {
     throw ErrorService.handleError(e);
   }

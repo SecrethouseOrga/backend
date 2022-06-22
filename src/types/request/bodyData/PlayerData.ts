@@ -2,6 +2,7 @@ export type PlayerData = {
     name: string;
     secret: string;
     gender: string;
+    gameCode: string;
 }
 
 export function castToPlayerData(value: any):PlayerData|null {
@@ -10,5 +11,5 @@ export function castToPlayerData(value: any):PlayerData|null {
 }
 function isPlayerData(data:PlayerData):data is PlayerData {
   return data.name != undefined && data.secret != undefined &&
-    data.gender != undefined;
+    data.gender != undefined && data.gameCode != undefined;
 }

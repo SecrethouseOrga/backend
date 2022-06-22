@@ -2,9 +2,14 @@ import {Router} from "express";
 import {Buzz, BuzzStatus, EventTypes, Player} from "../../bdd/entities";
 import {BadRequestError} from "../../errors";
 import {BddService} from "../../services/BddService";
-import {authVerification} from "../commonMiddlewares/authMiddlewares";
 import {castToBuzzData, castToEventData} from "../../types/request/bodyData";
-import {checkId} from "../commonMiddlewares/paramMiddleware";
+import {
+  checkId,
+  authVerification,
+  sendData,
+  objectCreated,
+} from "../commonMiddlewares";
+import {ErrorService} from "../../services/ErrorService";
 
 const router = Router();
 
@@ -20,25 +25,23 @@ router.post("/", authVerification, async function(req, res, next) {
     const game = player.game;
     const target = <Player> await BddService.playerHandler.findPlayerById(buzzData.targetId);
     const event = await BddService.eventHandler.createEvent(eventData, player, game, EventTypes.BUZZ);
-    const buzz = await BddService.buzzHandler.createBuzz(buzzData, player, target, event);
+    await BddService.buzzHandler.createBuzz(buzzData, player, target, event);
     // TODO: remove 5k from buzzer
-    return res.status(200).send(buzz);
   } catch (e) {
-    console.log(e);
-    throw new BadRequestError("Could not create Buzz Event");
+    throw ErrorService.handleError(e);
   }
-});
+  next();
+}, objectCreated);
 
 router.get("/:id", checkId, async function(req, res, next) {
   const idBuzz: number = +req.params.id;
   try {
-    const buzz = <Buzz> await BddService.buzzHandler.findBuzzById(idBuzz);
-    return res.status(200).send(buzz);
+    req.dataToSend = <Buzz> await BddService.buzzHandler.findBuzzById(idBuzz);
   } catch (e) {
-    console.log(e);
-    throw new BadRequestError("Buzz not Found");
+    throw ErrorService.handleError(e);
   }
-});
+  next();
+}, sendData);
 
 router.put("/:id", checkId, async function(req, res, next) {
   const idBuzz: number = +req.params.id;
@@ -47,11 +50,11 @@ router.put("/:id", checkId, async function(req, res, next) {
     if (buzz.status === BuzzStatus.CORRECT) {
       await BddService.playerHandler.secretDiscovered(buzz.target.id);
     }
-    return res.status(200).send(buzz);
+    req.dataToSend = buzz;
   } catch (e) {
-    console.log(e);
-    throw new BadRequestError("Buzz could not be updated");
+    throw ErrorService.handleError(e);
   }
-});
+  next();
+}, objectCreated);
 
 export {router as buzzController};

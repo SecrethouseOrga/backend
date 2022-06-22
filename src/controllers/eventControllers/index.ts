@@ -1,18 +1,18 @@
 import {Router} from "express";
 import {buzzController} from "./buzzController";
-import {checkId} from "../commonMiddlewares/paramMiddleware";
 import {BddService} from "../../services/BddService";
-import {BadRequestError} from "../../errors";
+import {objectCreated, checkId} from "../commonMiddlewares";
+import {ErrorService} from "../../services/ErrorService";
 
 const router = Router();
 router.put("/:id", checkId, async function(req, res, next) {
   const eventId = +req.params.id;
   try {
-    const event = await BddService.eventHandler.updateEvent(eventId, req.body);
-    return res.status(200).send(event);
+    req.dataToSend = await BddService.eventHandler.updateEvent(eventId, req.body);
   } catch (e) {
-    throw new BadRequestError("Event could not be updated");
+    throw ErrorService.handleError(e);
   }
-});
+  next();
+}, objectCreated);
 router.use("/buzzs", buzzController);
 export {router as eventController};

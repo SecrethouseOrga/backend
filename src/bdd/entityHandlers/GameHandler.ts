@@ -8,13 +8,17 @@ export class GameHandler extends EntityHandler {
     super(entityManager, Game);
   }
 
-  async createGame(payload: GameData, user: User, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
-    const game = new Game(payload, user, eventIntervalUnity, eliminationDelayUnity);
+  async createGame(payload: GameData, user: User, code:string, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
+    const game = new Game(payload, user, code, eventIntervalUnity, eliminationDelayUnity);
     await this.repository.persistAndFlush(game);
     return game;
   }
 
   async findGameById(id:number) {
-    return await this.repository.findOne({id: id});
+    return await this.repository.findOneOrFail({id: id});
+  }
+
+  async findGameByCode(code:string) {
+    return await this.repository.findOneOrFail({code: code});
   }
 }

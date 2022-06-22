@@ -1,4 +1,11 @@
-import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
+import {
+  Entity,
+  Enum,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  Unique,
+} from "@mikro-orm/core";
 import {User} from "./User";
 import {GameData} from "../../types/request/bodyData";
 
@@ -25,15 +32,20 @@ export class Game {
     @Property()
       eliminationDelayQty!: number;
 
+    @Property()
+    @Unique()
+      code!: string;
+
     @Enum(() => DelayUnities)
       eliminationDelayUnity: DelayUnities = DelayUnities.HOURS;
 
     @ManyToOne()
       owner: User;
 
-    constructor(gameData: GameData, owner: User, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
+    constructor(gameData: GameData, owner: User, code:string, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
       this.maxPlayers = gameData.maxPlayers;
       this.owner = owner;
+      this.code = code;
       this.eventIntervalUnity = eventIntervalUnity;
       this.eventIntervalQty = gameData.eventIntervalQty;
       this.eliminationDelayUnity = eliminationDelayUnity;

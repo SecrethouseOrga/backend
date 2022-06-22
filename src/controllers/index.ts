@@ -3,7 +3,7 @@ import {gameController} from "./gameController";
 import {playerController} from "./playerController";
 import {roomController} from "./roomController";
 import {roomGameController} from "./roomGameController";
-import {errorHandler} from "./commonMiddlewares/errorMiddleware";
+import {errorHandler} from "./commonMiddlewares";
 import {RouteNotFoundError} from "../errors";
 import {eventController} from "./eventControllers";
 import {authController} from "./authController";

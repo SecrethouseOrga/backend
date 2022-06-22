@@ -22,7 +22,7 @@ app.use(async (req, res, next) =>{
   }
   RequestContext.create(BddService.entityManager, next);
 });
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(controllers);
 app.listen(80, () => {
   console.log(`Example app listening on port ${80}`);

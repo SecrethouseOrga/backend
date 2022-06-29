@@ -8,7 +8,7 @@ _Infos sur le discord._
 ### Création
 Dans ***secrethouse-backend/functions*** :
 
-Reférencer chaque entité dans la config de l'orm ***mikroOrm.config.ts***:
+Reférencer chaque entité dans la config de l'orm ***mikro-orm.config.ts***:
 > entities: [User, Author, etc, ...]
 
 Pour créer la base de données et les tables correspondantes :

@@ -1,11 +1,11 @@
 import {Game, Room, RoomGame} from "../../entities";
-import {EntityManager} from "@mikro-orm/mysql";
 import {LoadStrategy} from "@mikro-orm/core";
 import {EntityService} from "./EntityService";
+import {EntityServiceData} from "../../types/api/services";
 
 export class RoomGameService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, RoomGame);
+  constructor(data: EntityServiceData) {
+    super(data);
   }
 
   async createRoomGame( room: Room, game: Game) {

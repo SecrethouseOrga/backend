@@ -1,13 +1,12 @@
-import {EntityManager} from "@mikro-orm/knex";
 import {PlayerData} from "../../types/request/bodyData/PlayerData";
-import {Game, Genders, User} from "../../entities";
-import {Player} from "../../entities/Player";
+import {Game, Genders, User, Player} from "../../entities";
 import {EntityService} from "./EntityService";
 import {LoadStrategy} from "@mikro-orm/core";
+import {EntityServiceData} from "../../types/api/services";
 
 export class PlayerService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, Player);
+  constructor(data: EntityServiceData) {
+    super(data);
   }
 
   async createPlayer(payload: PlayerData, user: User, game: Game, gender: Genders) {
@@ -38,7 +37,7 @@ export class PlayerService extends EntityService {
     const players = <Player[]> await this.repository.find({game: gameId}, {fields: ["secret", "secretDiscovered"]});
     return players.map((player) => {
       const secret = (player.secretDiscovered) ? player.secret : "******";
-      // TODO: send player name and player buzzer
+      // TODO: send player entityName and player buzzer
       return {id: player.id, secret: secret};
     });
   }

@@ -1,12 +1,12 @@
 import {EntityService} from "./EntityService";
 import {Event, /* EventStatus,*/ EventTypes, Game, Player} from "../../entities";
-import {EntityManager} from "@mikro-orm/mysql";
 import {EventData} from "../../types/request/bodyData";
 import {LoadStrategy, wrap} from "@mikro-orm/core";
+import {EntityServiceData} from "../../types/api/services";
 
 export class EventService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, Event);
+  constructor(data: EntityServiceData) {
+    super(data);
   }
 
   async createEvent(payload: EventData, player: Player, game: Game, eventType: EventTypes) {

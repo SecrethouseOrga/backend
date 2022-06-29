@@ -1,12 +1,12 @@
 import {EntityService} from "./EntityService";
-import {EntityManager} from "@mikro-orm/mysql";
 import {User, UserRole} from "../../entities";
 import {UserData} from "../../types/request/bodyData";
+import {EntityServiceData} from "../../types/api/services";
 
 
 export class UserService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, User);
+  constructor(data: EntityServiceData) {
+    super(data);
   }
 
   async createUser(payload:UserData, role: UserRole = UserRole.VIEWER) {

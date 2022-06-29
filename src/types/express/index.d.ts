@@ -1,10 +1,10 @@
-import {UserPayload} from "../request";
+import {ResponsePayload, UserPayload} from "../request";
 
 declare global{
     namespace Express{
         interface Request{
             currentUser:UserPayload;
-            dataToSend:any;
+            resPayload:ResponsePayload;
         }
     }
 }

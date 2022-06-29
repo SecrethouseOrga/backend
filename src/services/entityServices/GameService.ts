@@ -1,11 +1,11 @@
 import {EntityService} from "./EntityService";
 import {Game, DelayUnities, User} from "../../entities";
-import {EntityManager} from "@mikro-orm/mysql";
 import {GameData} from "../../types/request/bodyData";
+import {EntityServiceData} from "../../types/api/services";
 
 export class GameService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, Game);
+  constructor(data: EntityServiceData) {
+    super(data);
   }
 
   async createGame(payload: GameData, user: User, code:string, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {

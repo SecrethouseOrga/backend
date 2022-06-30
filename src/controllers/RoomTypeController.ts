@@ -1,7 +1,9 @@
 import {NextFunction, Request, Response} from "express";
-import {Room} from "../entities";
+import {RoomType} from "../entities";
 import {BddService} from "../services";
 import {Controller} from "./Controller";
+import {castToRoomTypeData} from "../types/request/bodyData";
+import {BadRequestError} from "../errors/api";
 
 
 export class RoomTypeController extends Controller {
@@ -10,8 +12,10 @@ export class RoomTypeController extends Controller {
   }
 
   async createRoomType(req: Request, res: Response, next:NextFunction) {
+    const roomData = castToRoomTypeData(req.body);
+    if (roomData === null) throw new BadRequestError("Invalid RoomType Data");
     try {
-      await this.bdd.roomTypeService.createRoomType(req.body);
+      await this.bdd.roomTypeService.createRoomType(roomData);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }
@@ -30,7 +34,7 @@ export class RoomTypeController extends Controller {
   async getRoomType(req: Request, res: Response, next:NextFunction) {
     const idRoom: number = +req.params.id;
     try {
-      req.resPayload.dataToSend = <Room> await this.bdd.roomTypeService.findRoomTypeById(idRoom);
+      req.resPayload.dataToSend = <RoomType> await this.bdd.roomTypeService.findRoomTypeById(idRoom);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }

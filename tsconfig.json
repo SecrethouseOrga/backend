@@ -13,7 +13,6 @@
   },
   "compileOnSave": true,
   "include": [
-    "src",
-    "src/doc/swagger.json"
+    "src"
   ]
 }

@@ -1,7 +1,7 @@
 import * as jwt from "jsonwebtoken";
 import {UserPayload} from "../types/request";
 
-export class TokenHandler {
+export class TokenUtils {
   static expTime= "24h";
   static generateToken(userPayload:UserPayload): string {
     const key = process.env.SECRET_KEY;

@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from "express";
-import {DelayUnities, Game, Player, Room, User} from "../entities";
+import {DelayUnities, Game, Player, RoomType, User} from "../entities";
 import {BadRequestError} from "../errors/api";
 import {castToGameData} from "../types/request/bodyData";
 import {BddService} from "../services";
@@ -52,7 +52,7 @@ export class GameController extends Controller {
   async getGameRooms(req:Request, res:Response, next:NextFunction) {
     const idGame: number = +req.params.id;
     try {
-      req.resPayload.dataToSend = <Room[]> await this.bdd.roomGameService.findRoomsByGame(idGame);
+      req.resPayload.dataToSend = <RoomType[]> await this.bdd.roomGameService.findRoomsByGame(idGame);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }

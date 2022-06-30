@@ -1,5 +1,5 @@
 import {EntityManager} from "@mikro-orm/mysql";
-import {AnyEntity, EntityRepository, NotFoundError, ValidationError,} from "@mikro-orm/core";
+import {AnyEntity, EntityRepository, NotFoundError, ValidationError} from "@mikro-orm/core";
 import {Service} from "../Service";
 import {BddOperation} from "../../types/api/enums";
 import {
@@ -20,8 +20,14 @@ export class EntityService extends Service {
     this.repository = this.em.getRepository(data.entityName);
   }
 
-  protected handleOperationError(operation: BddOperation, error:ValidationError): BddError {
-    this.logger.logError(this.logger.getBddOperationLog(operation, this.entityName, error.message));
+  protected handleOperationError(operation: BddOperation, e:any): BddError {
+    let error = e;
+    let msg = e.toString();
+    if (e instanceof ValidationError) {
+      error = <ValidationError> e;
+      msg = error.message;
+    }
+    this.logger.logError(this.logger.getBddOperationLog(operation, this.entityName, msg));
     if (error instanceof NotFoundError) return new EntityNotFoundError(this.entityName);
     else return new ValidationDataError(this.entityName);
   }

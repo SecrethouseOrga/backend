@@ -1,26 +1,39 @@
 import {EntityService} from "./EntityService";
-import {Room} from "../../entities";
-import {castToRoomData} from "../../types/request/bodyData";
+import {RoomType} from "../../entities";
+import {RoomTypeData} from "../../types/request/bodyData";
 import {EntityServiceData} from "../../types/api/services";
+import {BddOperation} from "../../types/api/enums";
 
 export class RoomTypeService extends EntityService {
   constructor(data: EntityServiceData) {
     super(data);
   }
 
-  async createRoomType(payload: any) {
-    const roomData = castToRoomData(payload);
-    if (roomData === null) return null;
-    const room = new Room(roomData);
-    await this.repository.persistAndFlush(room);
-    return room;
+  async createRoomType(payload: RoomTypeData) {
+    const room = new RoomType(payload);
+    try{
+      await this.repository.persistAndFlush(room);
+      return room;
+    }catch (e){
+      throw this.handleOperationError(BddOperation.CREATE, e);
+    }
+
   }
 
   async findAll() {
-    return await this.repository.findAll();
+    try {
+      return await this.repository.findAll();
+    }catch (e){
+      throw this.handleOperationError(BddOperation.FIND, e);
+    }
+
   }
 
   async findRoomTypeById(id: number) {
-    return await this.repository.findOne({id: id});
+    try{
+      return await this.repository.findOneOrFail({id: id});
+    }catch (e){
+      throw this.handleOperationError(BddOperation.FIND, e);
+    }
   }
 }

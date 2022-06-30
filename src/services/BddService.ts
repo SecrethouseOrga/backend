@@ -4,7 +4,7 @@ import {BuzzService, EventService, GameService, PlayerService, RoomGameService, 
 import mikroOrmConfig from "../configs/mikro-orm.config";
 import {Service} from "./Service";
 import {EntityServiceData} from "../types/api/services";
-import {Buzz, Event, Game, Player, Room, RoomGame, User} from "../entities";
+import {Buzz, Event, Game, Player, RoomType, RoomGame, User} from "../entities";
 import {LoggerService} from "./LoggerService";
 
 export class BddService extends Service {
@@ -24,7 +24,7 @@ export class BddService extends Service {
       this.game = new GameService(this.getEntityServiceData(Game));
       this.player = new PlayerService(this.getEntityServiceData(Player));
       this.user = new UserService(this.getEntityServiceData(User));
-      this.roomType = new RoomTypeService(this.getEntityServiceData(Room));
+      this.roomType = new RoomTypeService(this.getEntityServiceData(RoomType));
       this.event = new EventService(this.getEntityServiceData(Event));
       this.roomGame = new RoomGameService(this.getEntityServiceData(RoomGame));
       this.buzz = new BuzzService(this.getEntityServiceData(Buzz));

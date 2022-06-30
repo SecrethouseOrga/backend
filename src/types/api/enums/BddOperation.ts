@@ -1,5 +1,6 @@
 export enum BddOperation{
   FIND,
-  CREATE_UPDATE,
+  CREATE,
+  UPDATE,
   DELETE
 }

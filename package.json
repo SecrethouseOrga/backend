@@ -4,10 +4,10 @@
     "lint": "eslint --ext .js,.ts .",
     "clean": "rimraf dist/doc/",
     "copyfiles": "copyfiles --error --up 1 src/doc/swagger.json dist/",
-    "create-bdd": "node dist/scripts/createDb.js",
+    "create-bdd": "node dist/src/scripts/createDb.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "postbuild": "npm run clean && npm run copyfiles",
+    "postbuild": "npm run clean & npm run copyfiles",
     "start": "node dist/api.js",
     "test": "jest"
   },

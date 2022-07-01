@@ -1,17 +1,17 @@
 import {EntityService} from "./EntityService";
-import {Game, DelayUnities, User} from "../../entities";
+import {Game, User} from "../../entities";
 import {GameData} from "../../types/request/bodyData";
 import {EntityServiceData} from "../../types/api/services";
 import {BddOperation} from "../../types/api/enums";
 
 export class GameService extends EntityService {
   constructor(data: EntityServiceData) {
-    super(data);
+    super(data, "Game");
   }
 
-  async createGame(payload: GameData, user: User, code:string, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
-    const game = new Game(payload, user, code, eventIntervalUnity, eliminationDelayUnity);
+  async createGame(payload: GameData, user: User, code:string) {
     try {
+      const game = new Game(payload, user, code);
       await this.repository.persistAndFlush(game);
       return game;
     } catch (e) {

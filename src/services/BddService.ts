@@ -1,7 +1,6 @@
 import {EntityManager, MySqlDriver} from "@mikro-orm/mysql";
-import {AnyEntity, EntityName, MikroORM, Options} from "@mikro-orm/core";
+import {AnyEntity, EntityName, MikroORM} from "@mikro-orm/core";
 import {BuzzService, EventService, GameService, PlayerService, RoomGameService, RoomTypeService, UserService} from "./entityServices";
-import mikroOrmConfig from "../configs/mikro-orm.config";
 import {Service} from "./Service";
 import {EntityServiceData} from "../types/api/services";
 import {Buzz, Event, Game, Player, RoomType, RoomGame, User} from "../entities";
@@ -18,22 +17,21 @@ export class BddService extends Service {
   private roomGame!: RoomGameService;
   private buzz!: BuzzService;
 
-  constructor(logger: LoggerService) {
+  constructor(logger: LoggerService, orm:MikroORM<MySqlDriver>) {
     super("BddService", logger);
-    this.createOrm().then( (r) =>{
-      this.game = new GameService(this.getEntityServiceData(Game));
-      this.player = new PlayerService(this.getEntityServiceData(Player));
-      this.user = new UserService(this.getEntityServiceData(User));
-      this.roomType = new RoomTypeService(this.getEntityServiceData(RoomType));
-      this.event = new EventService(this.getEntityServiceData(Event));
-      this.roomGame = new RoomGameService(this.getEntityServiceData(RoomGame));
-      this.buzz = new BuzzService(this.getEntityServiceData(Buzz));
-    });
+    this.orm = orm;
+    this.em = this.orm.em as EntityManager;
+    this.createAllEntityService();
   }
 
-  async createOrm() {
-    this.orm = await MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfig());
-    this.em = this.orm.em as EntityManager;
+  protected createAllEntityService() {
+    this.game = new GameService(this.getEntityServiceData(Game));
+    this.player = new PlayerService(this.getEntityServiceData(Player));
+    this.user = new UserService(this.getEntityServiceData(User));
+    this.roomType = new RoomTypeService(this.getEntityServiceData(RoomType));
+    this.event = new EventService(this.getEntityServiceData(Event));
+    this.roomGame = new RoomGameService(this.getEntityServiceData(RoomGame));
+    this.buzz = new BuzzService(this.getEntityServiceData(Buzz));
   }
 
   getEntityServiceData(entity:EntityName<AnyEntity>): EntityServiceData {
@@ -74,5 +72,9 @@ export class BddService extends Service {
 
   get buzzService(): BuzzService {
     return this.buzz;
+  }
+
+  get EntityManager() {
+    return this.em;
   }
 }

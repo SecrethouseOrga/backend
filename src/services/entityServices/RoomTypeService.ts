@@ -6,33 +6,31 @@ import {BddOperation} from "../../types/api/enums";
 
 export class RoomTypeService extends EntityService {
   constructor(data: EntityServiceData) {
-    super(data);
+    super(data, "RoomType");
   }
 
   async createRoomType(payload: RoomTypeData) {
     const room = new RoomType(payload);
-    try{
+    try {
       await this.repository.persistAndFlush(room);
       return room;
-    }catch (e){
+    } catch (e) {
       throw this.handleOperationError(BddOperation.CREATE, e);
     }
-
   }
 
   async findAll() {
     try {
       return await this.repository.findAll();
-    }catch (e){
+    } catch (e) {
       throw this.handleOperationError(BddOperation.FIND, e);
     }
-
   }
 
   async findRoomTypeById(id: number) {
-    try{
+    try {
       return await this.repository.findOneOrFail({id: id});
-    }catch (e){
+    } catch (e) {
       throw this.handleOperationError(BddOperation.FIND, e);
     }
   }

@@ -6,7 +6,7 @@ import {BddOperation} from "../../types/api/enums";
 
 export class RoomGameService extends EntityService {
   constructor(data: EntityServiceData) {
-    super(data);
+    super(data, "RoomGame");
   }
 
   async createRoomGame( room: RoomType, game: Game) {

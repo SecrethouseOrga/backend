@@ -7,7 +7,7 @@ import {BddOperation} from "../../types/api/enums";
 
 export class BuzzService extends EntityService {
   constructor(data: EntityServiceData) {
-    super(data);
+    super(data, "Buzz");
   }
 
   async createBuzz(payload: BuzzData, buzzer: Player, target: Player, event: Event) {

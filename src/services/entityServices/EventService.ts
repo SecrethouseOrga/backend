@@ -1,5 +1,11 @@
 import {EntityService} from "./EntityService";
-import {Event, /* EventStatus,*/ EventTypes, Game, Player} from "../../entities";
+import {
+  Event,
+  EventStatus,
+  EventTypes,
+  Game,
+  Player,
+} from "../../entities";
 import {EventData} from "../../types/request/bodyData";
 import {LoadStrategy, wrap} from "@mikro-orm/core";
 import {EntityServiceData} from "../../types/api/services";
@@ -7,12 +13,12 @@ import {BddOperation} from "../../types/api/enums";
 
 export class EventService extends EntityService {
   constructor(data: EntityServiceData) {
-    super(data);
+    super(data, "Event");
   }
 
   async createEvent(payload: EventData, player: Player, game: Game, eventType: EventTypes) {
-    const event = new Event(payload, player, game, eventType);
     try {
+      const event = new Event(payload, player, game, eventType);
       await this.repository.persistAndFlush(event);
       return event;
     } catch (e) {
@@ -57,9 +63,8 @@ export class EventService extends EntityService {
 
   async getCurrentEvents(idGame: number) {
     try {
-      const events = <Event[]> await this.findEventByGame(idGame);
-      // return events.filter((event) => event.status === EventStatus.STARTED);
-      console.log(events);
+      const events = await this.repository.find({game: idGame});
+      events.filter((event) => event.status === EventStatus.STARTED);
       return events;
     } catch (e) {
       throw this.handleOperationError(BddOperation.FIND, e);

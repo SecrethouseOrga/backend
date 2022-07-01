@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from "express";
-import {DelayUnities, Game, Player, RoomType, User} from "../entities";
+import {Game, Player, RoomType, User} from "../entities";
 import {BadRequestError} from "../errors/api";
 import {castToGameData} from "../types/request/bodyData";
 import {BddService} from "../services";
@@ -17,11 +17,9 @@ export class GameController extends Controller {
 
     try {
       const user = <User> await this.bdd.userService.findUserById(req.currentUser.id);
-      const eliminationDelayUnity: DelayUnities = Game.castToDelayUnities(gameData.eliminationDelayUnity);
-      const eventIntervalUnity: DelayUnities = Game.castToDelayUnities(gameData.eventIntervalUnity);
       let code = Date.now().toString(36).substr(2, 10);
       code = "#"+ code.toUpperCase();
-      await this.bdd.gameService.createGame(gameData, user, code, eventIntervalUnity, eliminationDelayUnity);
+      await this.bdd.gameService.createGame(gameData, user, code);
       req.resPayload.dataToSend = code.toUpperCase();
     } catch (e) {
       throw this.handleMiddleWareError(e);

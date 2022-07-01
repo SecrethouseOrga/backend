@@ -14,13 +14,11 @@ export class PlayerController extends Controller {
   async createPlayer(req:Request, res:Response, next:NextFunction) {
     const playerData = castToPlayerData(req.body);
     if (playerData === null) throw new BadRequestError("Invalid Player Data");
-    // FIXME : Serialize data of user
-    const gender = Player.castToGenders(playerData.gender);
 
     try {
       const user = <User> await this.bdd.userService.findUserById(req.currentUser.id);
       const game = <Game> await this.bdd.gameService.findGameByCode(playerData.gameCode);
-      await this.bdd.playerService.createPlayer(playerData, user, game, gender);
+      await this.bdd.playerService.createPlayer(playerData, user, game);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }

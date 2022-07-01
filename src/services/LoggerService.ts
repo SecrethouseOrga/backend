@@ -17,7 +17,7 @@ export class LoggerService {
   }
 
   getBddOperationLog(operation: BddOperation, entityName: string, message: string) {
-    return "type: BDD, entity: "+entityName+", op: " + operation.toString() + ", message: " + message;
+    return "type: BDD, entity: "+entityName+", op: " + operation + ", message: " + message;
   }
 
   getServiceLog(serviceName: string, message:string) {

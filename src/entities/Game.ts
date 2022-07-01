@@ -42,13 +42,13 @@ export class Game {
     @ManyToOne()
       owner: User;
 
-    constructor(gameData: GameData, owner: User, code:string, eventIntervalUnity: DelayUnities, eliminationDelayUnity: DelayUnities) {
+    constructor(gameData: GameData, owner: User, code:string) {
       this.maxPlayers = gameData.maxPlayers;
       this.owner = owner;
       this.code = code;
-      this.eventIntervalUnity = eventIntervalUnity;
+      this.eventIntervalUnity = DelayUnities.HOURS;
       this.eventIntervalQty = gameData.eventIntervalQty;
-      this.eliminationDelayUnity = eliminationDelayUnity;
+      this.eliminationDelayUnity = DelayUnities.HOURS;
       this.eliminationDelayQty = gameData.eliminationDelayQty;
     }
 

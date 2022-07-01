@@ -1,6 +1,6 @@
 export enum BddOperation{
-  FIND,
-  CREATE,
-  UPDATE,
-  DELETE
+  FIND="Find",
+  CREATE="Create",
+  UPDATE="Update",
+  DELETE="Delete"
 }

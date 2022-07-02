@@ -310,3 +310,4 @@
 {"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
 {"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
 {"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"info","message":"type: Response, method: POST, url: /auth/register, message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhpa2FyaXJvbUBnbWFpbC5jb20iLCJpZCI6MjYsImlhdCI6MTY1Njc4NDgxOSwiZXhwIjoxNjU2ODcxMjE5fQ.GdiSKT9IaWF7vMiXHiznUBii-QFXkF0-UcQLuEMPaPI"}

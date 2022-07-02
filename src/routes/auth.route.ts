@@ -8,11 +8,11 @@ export default function(bddService:BddService): Router {
   const controller = new AuthController(bddService);
   const router = Router();
 
-  router.post("/register", controller.registerUser, tokenGeneration, returnData);
+  router.post("/register", controller.registerUser.bind(controller), tokenGeneration, returnData);
 
-  router.post("/login", controller.logUser, tokenGeneration, returnData);
+  router.post("/login", controller.logUser.bind(controller), tokenGeneration, returnData);
 
-  router.get("/testtoken", authVerification, controller.testToken, returnData);
+  router.get("/testtoken", authVerification, controller.testToken.bind(controller), returnData);
 
   return router;
 }

@@ -8,17 +8,17 @@ export default function(bddService:BddService): Router {
   const controller = new GameController(bddService);
   const router = Router();
 
-  router.post("/", authVerification, controller.createGame, objectCreated);
+  router.post("/", authVerification, controller.createGame.bind(controller), objectCreated);
 
-  router.get("/:id", checkId, controller.getGame, returnData);
+  router.get("/:id", checkId, controller.getGame.bind(controller), returnData);
 
-  router.get("/:id/players", checkId, controller.getGamePlayers, returnData);
+  router.get("/:id/players", checkId, controller.getGamePlayers.bind(controller), returnData);
 
-  router.get("/:id/rooms", checkId, controller.getGameRooms, returnData);
+  router.get("/:id/rooms", checkId, controller.getGameRooms.bind(controller), returnData);
 
-  router.get("/:id/events", checkId, controller.getGameEvents, returnData);
+  router.get("/:id/events", checkId, controller.getGameEvents.bind(controller), returnData);
 
-  router.get("/:id/secrets", checkId, controller.getGameSecrets, returnData);
+  router.get("/:id/secrets", checkId, controller.getGameSecrets.bind(controller), returnData);
 
   return router;
 }

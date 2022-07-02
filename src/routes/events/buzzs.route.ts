@@ -12,11 +12,11 @@ export default function(bddService:BddService): Router {
   const controller = new BuzzController(bddService);
   const router = Router();
 
-  router.post("/", authVerification, controller.createBuzz, objectCreated);
+  router.post("/", authVerification, controller.createBuzz.bind(controller), objectCreated);
 
-  router.get("/:id", checkId, controller.getBuzz, returnData);
+  router.get("/:id", checkId, controller.getBuzz.bind(controller), returnData);
 
-  router.put("/:id", checkId, controller.updateBuzz, objectCreated);
+  router.put("/:id", checkId, controller.updateBuzz.bind(controller), objectCreated);
 
   return router;
 }

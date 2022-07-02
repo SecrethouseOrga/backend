@@ -8,7 +8,7 @@ export default function(bddService:BddService): Router {
   const controller = new RoomGameController(bddService);
   const router = Router();
 
-  router.post("/", authVerification, controller.createRoomGame, objectCreated);
+  router.post("/", authVerification, controller.createRoomGame.bind(controller), objectCreated);
 
   return router;
 }

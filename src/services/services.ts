@@ -6,11 +6,9 @@ import mikroOrmConfig from "../configs/mikro-orm.config";
 
 export let services: Services;
 
-export function createServices() {
+export async function createServices() {
   const loggerService = new LoggerService();
-  let bddService: BddService;
-  MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfig()).then((r)=>{
-    bddService = new BddService(loggerService, r);
-    services = <Services> {logger: loggerService, bdd: bddService};
-  });
+  const orm = await MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfig());
+  const bddService = new BddService(loggerService, orm);
+  services = <Services> {logger: loggerService, bdd: bddService};
 }

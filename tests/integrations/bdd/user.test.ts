@@ -6,7 +6,7 @@ import {
   EntityNotFoundError,
   ValidationDataError,
 } from "../../../src/errors/bdd";
-import {EntityManager} from "@mikro-orm/mysql";
+import {EntityManager} from "@mikro-orm/postgresql";
 
 let userService: UserService;
 let userId: number;

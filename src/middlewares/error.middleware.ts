@@ -8,7 +8,7 @@ export function errorHandler(logger: LoggerService) {
     if (!(err instanceof ApiError)) error = new ServerSideError(err.message);
     else error = <ApiError>err;
     const msg = (error instanceof ServerSideError)? error.fullError : error.serializeError();
-    logger.logError(logger.getMiddlewareLog(req.method, req.baseUrl, msg));
+    logger.logError(logger.getMiddlewareLog(req.method, req.originalUrl, msg));
     req.resPayload.status = error.statusCode;
     req.resPayload.dataToSend = error.serializeError();
     next();

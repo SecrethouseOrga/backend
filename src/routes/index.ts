@@ -26,11 +26,11 @@ createServices().then(()=>{
   router.use("/buzzs", buzzsRoute(services.bdd));
   router.use("/roomtypes", roomtypesRoute(services.bdd));
   router.use("/roomgame", roomgameRoute(services.bdd));
+  router.use(errorHandler(services.logger));
+  router.use(sendResponse(services.logger));
   router.use("*", (req, res, next) => {
     throw new RouteNotFoundError();
   });
-  router.use(errorHandler(services.logger));
-  router.use(sendResponse(services.logger));
 });
 
 export default router;

@@ -1,4 +1,4 @@
-import {EntityManager, MySqlDriver} from "@mikro-orm/mysql";
+import {EntityManager, PostgreSqlDriver} from "@mikro-orm/postgresql";
 import {AnyEntity, EntityName, MikroORM} from "@mikro-orm/core";
 import {BuzzService, EventService, GameService, PlayerService, RoomGameService, RoomTypeService, UserService} from "./entityServices";
 import {Service} from "./Service";
@@ -8,7 +8,7 @@ import {LoggerService} from "./LoggerService";
 
 export class BddService extends Service {
   private em!: EntityManager;
-  private orm!: MikroORM<MySqlDriver>;
+  private orm!: MikroORM<PostgreSqlDriver>;
   private game!: GameService;
   private player!: PlayerService;
   private user!: UserService;
@@ -17,7 +17,7 @@ export class BddService extends Service {
   private roomGame!: RoomGameService;
   private buzz!: BuzzService;
 
-  constructor(logger: LoggerService, orm:MikroORM<MySqlDriver>) {
+  constructor(logger: LoggerService, orm:MikroORM<PostgreSqlDriver>) {
     super("BddService", logger);
     this.orm = orm;
     this.em = this.orm.em as EntityManager;

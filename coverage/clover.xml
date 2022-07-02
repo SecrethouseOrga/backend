@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656771557607" clover="3.2.0">
-  <project timestamp="1656771557607" name="All files">
-    <metrics statements="1696" coveredstatements="1384" conditionals="191" coveredconditionals="167" methods="152" coveredmethods="109" elements="2039" coveredelements="1660" complexity="0" loc="1696" ncloc="1696" packages="14" files="66" classes="66"/>
+<coverage generated="1656783065203" clover="3.2.0">
+  <project timestamp="1656783065203" name="All files">
+    <metrics statements="1699" coveredstatements="1387" conditionals="191" coveredconditionals="167" methods="152" coveredmethods="109" elements="2042" coveredelements="1663" complexity="0" loc="1699" ncloc="1699" packages="14" files="66" classes="66"/>
     <package name="src.configs">
       <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="winston-logger.config.ts" path="C:\Users\Amryon\Documents\Workspace\SecretHouse\backend\src\configs\winston-logger.config.ts">
@@ -1812,9 +1812,9 @@
       </file>
     </package>
     <package name="tests.configs">
-      <metrics statements="28" coveredstatements="28" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="31" coveredstatements="31" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="mikro-orm.config.ts" path="C:\Users\Amryon\Documents\Workspace\SecretHouse\backend\tests\configs\mikro-orm.config.ts">
-        <metrics statements="28" coveredstatements="28" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="31" coveredstatements="31" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -1841,8 +1841,11 @@
         <line num="24" count="9" type="stmt"/>
         <line num="25" count="9" type="stmt"/>
         <line num="26" count="9" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="27" count="9" type="stmt"/>
+        <line num="28" count="9" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
     <package name="tests.integrations.setup">

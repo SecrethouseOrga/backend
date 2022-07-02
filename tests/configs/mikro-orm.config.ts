@@ -18,10 +18,13 @@ const options = function(): Options {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     metadataProvider: TsMorphMetadataProvider,
-    allowGlobalContext: true,
     port: Number(process.env.DB_PORT),
-    type: "mysql",
+    allowGlobalContext: true,
+    type: "postgresql",
     validate: true,
+    driverOptions: {
+      connection: {ssl: {rejectUnauthorized: false}},
+    },
   };
 };
 

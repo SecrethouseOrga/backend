@@ -1,13 +1,13 @@
 import {config} from "dotenv";
 import {AnyEntity, EntityName, MikroORM, Options} from "@mikro-orm/core";
-import {EntityManager, MySqlDriver} from "@mikro-orm/mysql";
+import {EntityManager, PostgreSqlDriver} from "@mikro-orm/postgresql";
 import mikroOrmConfigTest from "../../configs/mikro-orm.config";
 import {BddService, LoggerService} from "../../../src/services";
 import {EntityServiceData} from "../../../src/types/api/services";
 
 export async function initOrm() {
   config();
-  return await MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfigTest());
+  return await MikroORM.init<PostgreSqlDriver>(<Options<PostgreSqlDriver>>mikroOrmConfigTest());
 }
 
 export const Logger = new LoggerService();

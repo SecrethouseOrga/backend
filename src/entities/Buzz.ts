@@ -1,5 +1,5 @@
 import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
-import {BuzzData} from "../types/request/bodyData/BuzzData";
+import {BuzzData} from "../types/request/bodyData";
 import {Event} from "./Event";
 import {Player} from "./Player";
 

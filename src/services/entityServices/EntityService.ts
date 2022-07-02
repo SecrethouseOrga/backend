@@ -1,4 +1,4 @@
-import {EntityManager} from "@mikro-orm/mysql";
+import {EntityManager} from "@mikro-orm/postgresql";
 import {AnyEntity, EntityRepository, NotFoundError, ValidationError} from "@mikro-orm/core";
 import {Service} from "../Service";
 import {BddOperation} from "../../types/api/enums";

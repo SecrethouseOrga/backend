@@ -1,9 +1,9 @@
 import {BddService} from "../../../src/services";
 import {initOrm, Logger} from "../setup";
 import {MikroORM} from "@mikro-orm/core";
-import {MySqlDriver} from "@mikro-orm/mysql";
+import {PostgreSqlDriver} from "@mikro-orm/postgresql";
 
-let orm: MikroORM<MySqlDriver>;
+let orm: MikroORM<PostgreSqlDriver>;
 describe("Create Bdd Service", ()=>{
   beforeAll(async ()=>{
     orm = await initOrm();

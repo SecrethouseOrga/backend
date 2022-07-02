@@ -1,32 +1,23 @@
 # Backend SecretHouse 
 
-## Base de donnée
+## Déploiement local
 
-### Identifiants
-_Infos sur le discord._
-
-### Création
-Dans ***secrethouse-backend/functions*** :
-
-Reférencer chaque entité dans la config de l'orm ***mikro-orm.config.ts***:
-> entities: [User, Author, etc, ...]
-
-Pour créer la base de données et les tables correspondantes :
-
-Build l'application
+### Build 
 > npm run build
 
-Lancer le script de création:
-> node lib/bdd/createDb.js
-## Dev Local
-### Firebase tools
-Nécessite d'installer firebase cli avec :`npm install -g firebase-tools`
+Cette commande créera un dossier **dist/**, dans lequel se trouve toutes les sources.
 
-Pour lancer le projet en local :
-`firebase serve`
+### Start
+> npm run start
+
+
+### Test
+**Attention:** Les tests peuvent ne pas fonctionner tous d'un coup, lancez les tests un par un.
+> npm run test
+
 
 ### Environement
-Necessite de créer un **.env** et de renseigner les champs:
+Necessite de créer un **.env** à la racine et de renseigner les champs:
 ```
 SECRET_KEY={token secret key}
 DB_NAME={Db name}
@@ -35,14 +26,28 @@ DB_USER={Db user}
 DB_PORT={Db port}
 DB_HOST={Db host url}
 ```
-## Déploiement
+Vous trouverez un exemple à la racine du projet dans **.env.example**
 
-Pour release une feature ou un fix :
-- Écrire votre code et le tester
-- Ouvrir une PR sur le projet github.
-- Attendre un approved
-- Merge dans `main`
-- Une nouvelle PR pour la release est créé qui devra être approved et merge également pour déclencher le :
-  - Le CI automatisera la release + déploiement sur firebase.
+## Base de données
 
-f
+Touts les scripts se trouve dans **src/scripts**
+
+### Création
+
+> npm run create-bdd
+
+## API en ligne:
+
+Lien vers l'api:
+https://secrethouse-api.herokuapp.com
+
+Lien vers la doc:
+https://secrethouse-api.herokuapp.com/doc
+
+Lien vers le coverage des tests:
+https://secrethouse-api.herokuapp.com/coverage
+
+
+
+
+

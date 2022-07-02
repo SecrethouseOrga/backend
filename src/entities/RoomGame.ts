@@ -1,5 +1,5 @@
 import {Entity, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
-import {Room} from "./Room";
+import {RoomType} from "./RoomType";
 import {Game} from "./Game";
 
 @Entity()
@@ -8,7 +8,7 @@ export class RoomGame {
       id!: number;
 
     @ManyToOne()
-      room!: Room;
+      room!: RoomType;
 
     @ManyToOne()
       game!: Game;
@@ -16,7 +16,7 @@ export class RoomGame {
     @Property({default: false})
       isLocked = false;
 
-    constructor(room: Room, game: Game) {
+    constructor(room: RoomType, game: Game) {
       this.room = room;
       this.game = game;
     }

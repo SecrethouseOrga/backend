@@ -1,0 +1,4 @@
+{"level":"error","message":"type: Middleware, method: POST, url: , message: this.handleMiddleWareError is not a function"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: Cannot set properties of undefined (setting 'dataToSend')"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('hikarirom@gmail.com', 'HikariRom', 'viewer', 'HikariRom') - Duplicate entry 'HikariRom' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: Wrong Data"}

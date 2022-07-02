@@ -53,8 +53,6 @@ export class Buzz {
 
 export enum BuzzStatus{
     "PENDING" = "Pending",
-    "CONFIRMED" = "confirmed",
     "CORRECT" = "correct",
-    "SEMI-CORRECT" = "semi-correct",
     "WRONG" = "wrong",
 }

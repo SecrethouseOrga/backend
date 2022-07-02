@@ -1,70 +1,80 @@
 import {EntityManager, MySqlDriver} from "@mikro-orm/mysql";
-import {MikroORM, Options} from "@mikro-orm/core";
-import {BuzzService, EventService, GameService, PlayerService, RoomGameService, RoomService, UserService} from "./entityServices";
-import mikroOrmConfig from "../mikroOrm.config";
+import {AnyEntity, EntityName, MikroORM} from "@mikro-orm/core";
+import {BuzzService, EventService, GameService, PlayerService, RoomGameService, RoomTypeService, UserService} from "./entityServices";
+import {Service} from "./Service";
+import {EntityServiceData} from "../types/api/services";
+import {Buzz, Event, Game, Player, RoomType, RoomGame, User} from "../entities";
+import {LoggerService} from "./LoggerService";
 
-export class BddService {
-  static entityManager: EntityManager;
-  private static user: UserService;
-  private static orm: MikroORM<MySqlDriver>;
-  private static game: GameService;
-  private static player: PlayerService;
-  private static event: EventService;
-  private static room: RoomService;
-  private static roomGame: RoomGameService;
-  private static buzz: BuzzService;
+export class BddService extends Service {
+  private em!: EntityManager;
+  private orm!: MikroORM<MySqlDriver>;
+  private game!: GameService;
+  private player!: PlayerService;
+  private user!: UserService;
+  private event!: EventService;
+  private roomType!: RoomTypeService;
+  private roomGame!: RoomGameService;
+  private buzz!: BuzzService;
 
-  static async createOrm() {
-    this.orm = await MikroORM.init<MySqlDriver>(<Options<MySqlDriver>>mikroOrmConfig());
-    this.entityManager = this.orm.em as EntityManager;
+  constructor(logger: LoggerService, orm:MikroORM<MySqlDriver>) {
+    super("BddService", logger);
+    this.orm = orm;
+    this.em = this.orm.em as EntityManager;
+    this.createAllEntityService();
   }
 
-  static get gameHandler(): GameService {
-    if (this.game == null) {
-      this.game = new GameService(this.entityManager);
-    }
+  protected createAllEntityService() {
+    this.game = new GameService(this.getEntityServiceData(Game));
+    this.player = new PlayerService(this.getEntityServiceData(Player));
+    this.user = new UserService(this.getEntityServiceData(User));
+    this.roomType = new RoomTypeService(this.getEntityServiceData(RoomType));
+    this.event = new EventService(this.getEntityServiceData(Event));
+    this.roomGame = new RoomGameService(this.getEntityServiceData(RoomGame));
+    this.buzz = new BuzzService(this.getEntityServiceData(Buzz));
+  }
+
+  getEntityServiceData(entity:EntityName<AnyEntity>): EntityServiceData {
+    return {
+      entityManager: this.em,
+      entityName: entity,
+      logger: this.logger,
+    };
+  }
+
+  get entityManager(): EntityManager {
+    return this.em;
+  }
+
+  get gameService(): GameService {
     return this.game;
   }
 
-  static get playerHandler(): PlayerService {
-    if (this.player == null) {
-      this.player = new PlayerService(this.entityManager);
-    }
+  get playerService(): PlayerService {
     return this.player;
   }
 
-  static get userHandler(): UserService {
-    if (this.user == null) {
-      this.user = new UserService(this.entityManager);
-    }
+  get userService(): UserService {
     return this.user;
   }
 
-  static get roomHandler(): RoomService {
-    if (this.room == null) {
-      this.room = new RoomService(this.entityManager);
-    }
-    return this.room;
+  get roomTypeService(): RoomTypeService {
+    return this.roomType;
   }
 
-  static get eventHandler(): EventService {
-    if (this.event == null) {
-      this.event = new EventService(this.entityManager);
-    }
+  get eventService(): EventService {
     return this.event;
   }
 
-  static get roomGameHandler(): RoomGameService {
-    if (this.roomGame == null) {
-      this.roomGame = new RoomGameService(this.entityManager);
-    }
+  get roomGameService(): RoomGameService {
     return this.roomGame;
   }
 
-  static get buzzHandler(): BuzzService {
-    if (this.buzz == null) {
-      this.buzz = new BuzzService(this.entityManager);
-    }
+  get buzzService(): BuzzService {
     return this.buzz;
+  }
+
+  get EntityManager() {
+    return this.em;
   }
 }

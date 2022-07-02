@@ -1,4 +1,4 @@
-export interface RoomGameData {
+export type RoomGameData = {
     isLocked: boolean;
 }
 

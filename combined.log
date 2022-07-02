@@ -1,0 +1,277 @@
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa.com', '!pass', 'viewer', 'alb') - Duplicate entry 'alb' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa.com', '!pass', 'viewer', 'alb') - Duplicate entry 'alb' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: null })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ email: null })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa.com', '!pass', 'viewer', 'alb') - Duplicate entry 'alb' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: null })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ email: null })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: Using global EntityManager instance methods for context specific actions is disallowed. If you need to work with the global instance's identity map, use `allowGlobalContext` configuration option or `fork()` instead."}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: 1, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: 0, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: 1, message: Value for Game.eventIntervalUnity is required, 'undefined' found\nentity: Game {\n  eventIntervalUnity: undefined,\n  eliminationDelayUnity: undefined,\n  maxPlayers: 2,\n  owner: User {\n    role: 'viewer',\n    email: 'aa@aa',\n    username: 'hello',\n    password: '!@pass',\n    id: 23\n  },\n  code: '#15448',\n  eventIntervalQty: 100,\n  eliminationDelayQty: 100\n}"}
+{"level":"error","message":"type: BDD, entity: Game, op: 1, message: Value for Game.eventIntervalUnity is required, 'undefined' found\nentity: Game {\n  eventIntervalUnity: undefined,\n  eliminationDelayUnity: undefined,\n  maxPlayers: 2,\n  owner: User {\n    role: 'viewer',\n    email: 'aa@aa',\n    username: 'hello',\n    password: '!@pass',\n    id: 24\n  },\n  code: '#15448',\n  eventIntervalQty: 100,\n  eliminationDelayQty: 100\n}"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: Value for Game.eventIntervalUnity is required, 'undefined' found\nentity: Game {\n  eventIntervalUnity: undefined,\n  eliminationDelayUnity: undefined,\n  maxPlayers: 2,\n  owner: User {\n    role: 'viewer',\n    email: 'aa@aa',\n    username: 'hello',\n    password: '!@pass',\n    id: 25\n  },\n  code: '#15448',\n  eventIntervalQty: 100,\n  eliminationDelayQty: 100\n}"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: Value for Game.eventIntervalUnity is required, 'undefined' found\nentity: Game {\n  eventIntervalUnity: undefined,\n  eliminationDelayUnity: undefined,\n  maxPlayers: 2,\n  owner: User {\n    role: 'viewer',\n    email: 'aa@aa',\n    username: 'hello',\n    password: '!@pass',\n    id: 26\n  },\n  code: '#15448',\n  eventIntervalQty: 100,\n  eliminationDelayQty: 100\n}"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: Value for Player.gender is required, 'undefined' found\nentity: Player {\n  jackpot: 10000,\n  avatar: '',\n  isReady: false,\n  isBuzzed: false,\n  canBuzz: true,\n  canBeBuzzed: true,\n  isNominated: false,\n  isEliminated: false,\n  secretDiscovered: false,\n  name: 'George',\n  secret: \"J'aime les pates\",\n  user: User {\n    role: 'viewer',\n    email: 'aa@aa',\n    username: 'hello',\n    password: '!@pass',\n    id: 27\n  },\n  game: Game {\n    eventIntervalUnity: 'h',\n    eliminationDelayUnity: 'h',\n    maxPlayers: 2,\n    owner: User {\n      role: 'viewer',\n      email: 'aa@aa',\n      username: 'hello',\n      password: '!@pass',\n      id: 27\n    },\n    code: '#15448',\n    eventIntervalQty: 100,\n    eliminationDelayQty: 100,\n    id: 1\n  },\n  gender: undefined\n}"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: null })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ user: 27, game: { endDate: { '$eq': null } } })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Update, message: Player not found ({ id: null })"}
+{"level":"error","message":"type: BDD, entity: User, op: Delete, message: ForeignKeyConstraintViolationException: delete from `user` where `id` = 27 - Cannot delete or update a parent row: a foreign key constraint fails (`secrethouse-test`.`game`, CONSTRAINT `game_owner_id_foreign` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE)"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Delete, message: ForeignKeyConstraintViolationException: delete from `user` where `id` = 1 - Cannot delete or update a parent row: a foreign key constraint fails (`secrethouse-test`.`game`, CONSTRAINT `game_owner_id_foreign` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE)"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: 4 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Update, message: Error: Not Found"}
+{"level":"error","message":"type: BDD, entity: Game, op: Delete, message: ForeignKeyConstraintViolationException: delete from `game` where `id` = 4 - Cannot delete or update a parent row: a foreign key constraint fails (`secrethouse-test`.`event`, CONSTRAINT `event_game_id_foreign` FOREIGN KEY (`game_id`) REFERENCES `game` (`id`) ON UPDATE CASCADE)"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: 5 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Update, message: Error: Not Found"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 64) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 59) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa', '!@pass', 'viewer', 'hello') - Duplicate entry 'hello' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('aa@aa123', '!@pass', 'viewer', 'hello123') - Duplicate entry 'hello123' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 74) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 75) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('Buzz@Buzz1', '!@pass', 'viewer', 'Buzz1Username') - Duplicate entry 'Buzz1Username' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('Event@Event', '!@pass', 'viewer', 'EventUsername') - Duplicate entry 'EventUsername' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 89) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: UniqueConstraintViolationException: insert into `game` (`code`, `elimination_delay_qty`, `elimination_delay_unity`, `event_interval_qty`, `event_interval_unity`, `max_players`, `owner_id`) values ('#6565', 100, 'h', 100, 'h', 2, 87) - Duplicate entry '#6565' for key 'game.game_code_unique'"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"info","message":"type: Response, method: Get, url: /dummyUrl, message: "}
+{"level":"info","message":"type: Response, method: Get, url: /dummyUrl, message: "}
+{"level":"info","message":"type: Response, method: Get, url: /dummyUrl, message: "}
+{"level":"info","message":"type: Response, method: Get, url: /dummyUrl, message: "}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Bad request"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Some dumb error"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Bad request"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Some dumb error"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('dummy@email', '!@pass', 'viewer', 'AuthUsername') - Duplicate entry 'AuthUsername' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('dummy@email', '!@pass', 'viewer', 'AuthUsername') - Duplicate entry 'AuthUsername' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Bad request"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Some dumb error"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Bad request"}
+{"level":"error","message":"type: Middleware, method: Get, url: undefined, message: Some dumb error"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: TypeError: Cannot read properties of null (reading 'email')"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: User not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: TypeError: Cannot read properties of null (reading 'maxPlayers')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Create, message: TypeError: Cannot read properties of null (reading 'content')"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: TypeError: Cannot read properties of null (reading 'name')"}
+{"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Player, op: Find, message: Player not found ({ id: -1 })"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
+{"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: Middleware, method: GET, url: , message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: this.handleMiddleWareError is not a function"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: this.handleMiddleWareError is not a function"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: this.handleMiddleWareError is not a function"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: this.handleMiddleWareError is not a function"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: Cannot set properties of undefined (setting 'dataToSend')"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into `user` (`email`, `password`, `role`, `username`) values ('hikarirom@gmail.com', 'HikariRom', 'viewer', 'HikariRom') - Duplicate entry 'HikariRom' for key 'user.user_username_unique'"}
+{"level":"error","message":"type: Middleware, method: POST, url: , message: Wrong Data"}
+{"level":"info","message":"type: Response, method: POST, url: /auth/register, message: Wrong Data"}

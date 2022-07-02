@@ -1,26 +1,35 @@
-import {Game, Room, RoomGame} from "../../entities";
-import {EntityManager} from "@mikro-orm/mysql";
+import {Game, RoomType, RoomGame} from "../../entities";
 import {LoadStrategy} from "@mikro-orm/core";
 import {EntityService} from "./EntityService";
+import {EntityServiceData} from "../../types/api/services";
+import {BddOperation} from "../../types/api/enums";
 
 export class RoomGameService extends EntityService {
-  constructor(entityManager: EntityManager) {
-    super(entityManager, RoomGame);
+  constructor(data: EntityServiceData) {
+    super(data, "RoomGame");
   }
 
-  async createRoomGame( room: Room, game: Game) {
-    const roomGame = new RoomGame(room, game);
-    await this.repository.persistAndFlush(roomGame);
-    return roomGame;
+  async createRoomGame( room: RoomType, game: Game) {
+    try {
+      const roomGame = new RoomGame(room, game);
+      await this.repository.persistAndFlush(roomGame);
+      return roomGame;
+    } catch (e) {
+      throw this.handleOperationError(BddOperation.CREATE, e);
+    }
   }
 
   async findRoomsByGame(id: number) {
-    return await this.repository.find(
-        {game: id},
-        {
-          populate: ["room"],
-          strategy: LoadStrategy.SELECT_IN,
-        },
-    );
+    try {
+      return await this.repository.find(
+          {game: id},
+          {
+            populate: ["room"],
+            strategy: LoadStrategy.SELECT_IN,
+          },
+      );
+    } catch (e) {
+      throw this.handleOperationError(BddOperation.FIND, e);
+    }
   }
 }

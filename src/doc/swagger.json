@@ -20,12 +20,12 @@
       "description": "Everything about your players"
     },
     {
-      "name": "rooms",
-      "description": "Everything about your rooms"
+      "name": "roomTypes",
+      "description": "Everything about your room's type"
     },
     {
       "name": "roomGame",
-      "description": "Everything about your room games"
+      "description": "Everything about your room's game"
     },
     {
       "name": "events",

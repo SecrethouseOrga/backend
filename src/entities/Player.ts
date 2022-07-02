@@ -42,7 +42,7 @@ export class Player {
       secretDiscovered = false;
 
     @Enum(() => Genders)
-      gender!: Genders;
+      gender!: string;
 
     @ManyToOne()
       user: User;
@@ -50,12 +50,12 @@ export class Player {
     @ManyToOne()
       game: Game;
 
-    constructor(playerData: PlayerData, user: User, game: Game, gender: Genders) {
+    constructor(playerData: PlayerData, user: User, game: Game) {
       this.name = playerData.name;
       this.secret = playerData.secret;
       this.user = user;
       this.game = game;
-      this.gender = gender;
+      this.gender = playerData.gender;
     }
 
     static castToGenders(value: string) : Genders {

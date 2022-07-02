@@ -2,8 +2,6 @@ export type GameData = {
     maxPlayers: number;
     eventIntervalQty: number;
     eliminationDelayQty: number;
-    eliminationDelayUnity: string;
-    eventIntervalUnity: string;
 }
 
 export function castToGameData(value: any):GameData|null {
@@ -12,6 +10,5 @@ export function castToGameData(value: any):GameData|null {
 }
 function isGameData(data:GameData):data is GameData {
   return data.maxPlayers != undefined && data.eventIntervalQty != undefined &&
-    data.eliminationDelayQty != undefined && data.eventIntervalUnity != undefined &&
-    data.eliminationDelayUnity != undefined;
+    data.eliminationDelayQty != undefined
 }

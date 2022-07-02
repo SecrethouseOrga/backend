@@ -10,8 +10,8 @@ export class RoomTypeService extends EntityService {
   }
 
   async createRoomType(payload: RoomTypeData) {
-    const room = new RoomType(payload);
     try {
+      const room = new RoomType(payload);
       await this.repository.persistAndFlush(room);
       return room;
     } catch (e) {

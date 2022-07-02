@@ -21,8 +21,8 @@ describe("Test Player Bdd Operations", ()=>{
   beforeAll(async ()=>{
     bddService = <BddService> await initBddService();
     playerService = bddService.playerService;
-    user = await bddService.userService.createUser(getUserData("aa@aaa", "helloo"));
-    game = await bddService.gameService.createGame(getGameData(), user, "#154488");
+    user = await bddService.userService.createUser(getUserData("Player@Player", "PlayerUsername"));
+    game = await bddService.gameService.createGame(getGameData(), user, "#PG62P");
   });
 
   afterAll(async ()=>{
@@ -32,8 +32,8 @@ describe("Test Player Bdd Operations", ()=>{
   });
   test("Create Player", async ()=>{
     const expectedData = {
-      name: "George",
-      secret: "J'aime les pates",
+      name: "PlayerPlayer",
+      secret: "J'aime les Player",
       gender: "male",
       gameCode: game.code,
     };

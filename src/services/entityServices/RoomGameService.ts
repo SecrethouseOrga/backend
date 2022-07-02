@@ -10,8 +10,8 @@ export class RoomGameService extends EntityService {
   }
 
   async createRoomGame( room: RoomType, game: Game) {
-    const roomGame = new RoomGame(room, game);
     try {
+      const roomGame = new RoomGame(room, game);
       await this.repository.persistAndFlush(roomGame);
       return roomGame;
     } catch (e) {

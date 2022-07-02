@@ -30,10 +30,10 @@ describe("Test event Bdd Operations", ()=> {
   const eventType= EventTypes.BUZZ;
   beforeAll(async ()=>{
     bddService = <BddService> await initBddService();
-    const code = "#6565";
-    user = await bddService.userService.createUser(getUserData("aa@aa", "hello"));
+    const code = "#EG622G";
+    user = await bddService.userService.createUser(getUserData("Event@Event", "EventUsername"));
     game = await bddService.gameService.createGame(getGameData(), user, code);
-    player = await bddService.playerService.createPlayer(getPlayerData("Bertrand", "Des pates secretes", code), user, game);
+    player = await bddService.playerService.createPlayer(getPlayerData("EventPlayer", "Des Events secretes", code), user, game);
     eventService = bddService.eventService;
   });
 

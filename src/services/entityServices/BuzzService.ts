@@ -11,8 +11,8 @@ export class BuzzService extends EntityService {
   }
 
   async createBuzz(payload: BuzzData, buzzer: Player, target: Player, event: Event) {
-    const buzz = new Buzz(payload, buzzer, target, event);
     try {
+      const buzz = new Buzz(payload, buzzer, target, event);
       await this.repository.persistAndFlush(buzz);
       return buzz;
     } catch (e) {

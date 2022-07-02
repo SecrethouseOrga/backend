@@ -24,7 +24,7 @@ afterAll(async ()=>{
 
 describe("Test User Bdd Operation", ()=>{
   test("Create User", async ()=>{
-    const expectedData = {username: "alb", email: "aa@aa.com", password: "!pass"};
+    const expectedData = {username: "user", email: "user@user.com", password: "!userpass"};
     const userData = castToUserData(expectedData);
     expect(userData).toBeTruthy();
 

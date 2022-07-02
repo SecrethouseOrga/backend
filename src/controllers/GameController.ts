@@ -4,6 +4,7 @@ import {BadRequestError} from "../errors/api";
 import {castToGameData} from "../types/request/bodyData";
 import {BddService} from "../services";
 import {Controller} from "./Controller";
+import {generateGameCode} from "../utils";
 
 
 export class GameController extends Controller {
@@ -17,8 +18,7 @@ export class GameController extends Controller {
 
     try {
       const user = <User> await this.bdd.userService.findUserById(req.currentUser.id);
-      let code = Date.now().toString(36).substr(2, 10);
-      code = "#"+ code.toUpperCase();
+      const code = generateGameCode();
       await this.bdd.gameService.createGame(gameData, user, code);
       req.resPayload.dataToSend = code.toUpperCase();
     } catch (e) {

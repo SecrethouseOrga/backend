@@ -16,10 +16,10 @@ describe("Test Game Bdd Operations", ()=>{
   let gameService:GameService;
   let user: User;
   let gameId:number;
-  const gameCode= "#15478";
+  const gameCode= "#GG62G";
   beforeAll(async ()=>{
     bddService = <BddService> await initBddService();
-    user = await bddService.userService.createUser(getUserData("aa@a2a", "hello2"));
+    user = await bddService.userService.createUser(getUserData("Game@Game", "GameUsername"));
     gameService = bddService.gameService;
   });
 

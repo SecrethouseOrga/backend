@@ -18,7 +18,8 @@ export class PlayerController extends Controller {
     try {
       const user = <User> await this.bdd.userService.findUserById(req.currentUser.id);
       const game = <Game> await this.bdd.gameService.findGameByCode(playerData.gameCode);
-      await this.bdd.playerService.createPlayer(playerData, user, game);
+      const player = <Player> await this.bdd.playerService.createPlayer(playerData, user, game);
+      req.resPayload.dataToSend = <Player> await this.bdd.playerService.findPlayerById(player.id);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }

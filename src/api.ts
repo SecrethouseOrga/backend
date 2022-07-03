@@ -9,6 +9,7 @@ config();
 
 // Import routes and express
 import * as express from "express";
+import * as cors from "cors";
 import routes from "./routes";
 
 // Create express app
@@ -18,7 +19,14 @@ const swaggerDocument = require("./doc/swagger.json");
 
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = ["http://localhost:4200"];
+
+const options: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
+app.use(cors(options));
 app.use(express.json());
+
 app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/coverage", (req, res, next)=>{
   res.sendFile(path.join(__dirname, "../coverage/lcov-report/index.html" ));
@@ -28,4 +36,4 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 /* const cors = require('cors')({origin: true});
-app.use(cors);*/
+*/

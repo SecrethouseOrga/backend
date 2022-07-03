@@ -23,6 +23,7 @@ export class AuthController extends Controller {
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }
+    console.log("coucou");
     next();
   }
 

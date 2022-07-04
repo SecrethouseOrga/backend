@@ -10,7 +10,7 @@ export default function(bddService:BddService): Router {
 
   router.post("/", authVerification, controller.createGame.bind(controller), objectCreated);
 
-  router.get("/:id", checkId, controller.getGame.bind(controller), returnData);
+  router.get("/:code", controller.getGame.bind(controller), returnData);
 
   router.get("/:id/players", checkId, controller.getGamePlayers.bind(controller), returnData);
 

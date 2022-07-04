@@ -28,9 +28,9 @@ export class GameController extends Controller {
   }
 
   async getGame(req:Request, res:Response, next:NextFunction) {
-    const idGame: number = +req.params.id;
+    const code: string = "#"+req.params.code;
     try {
-      req.resPayload.dataToSend = <Game> await this.bdd.gameService.findGameById(idGame);
+      req.resPayload.dataToSend = <Game> await this.bdd.gameService.findGameByCode(code);
     } catch (e) {
       throw this.handleMiddleWareError(e);
     }

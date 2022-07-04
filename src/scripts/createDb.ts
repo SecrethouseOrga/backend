@@ -19,7 +19,7 @@ config();
 
   // there is also `generate()` method that returns drop + create queries
   const dropAndCreateDump = await generator.generate();
-  console.log(dropAndCreateDump); */
+  console.log(dropAndCreateDump);*/
 
   // or you can run those queries directly, but be sure to check them first!
   await generator.dropSchema({wrap: false});

@@ -1,4 +1,4 @@
-import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
+import {Entity, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {User} from "./User";
 import {Game} from "./Game";
 import {PlayerData} from "../types/request/bodyData/PlayerData";
@@ -41,7 +41,7 @@ export class Player {
     @Property({default: false})
       secretDiscovered = false;
 
-    @Enum(() => Genders)
+    @Property()
       gender!: string;
 
     @ManyToOne()
@@ -55,24 +55,6 @@ export class Player {
       this.secret = playerData.secret;
       this.user = user;
       this.game = game;
-      this.gender = playerData.gender;
+      this.gender = playerData.gender.toString();
     }
-
-    static castToGenders(value: string) : Genders {
-      let gender: Genders;
-      try {
-        const genderKey: keyof typeof Genders = value as keyof typeof Genders;
-        gender = Genders[genderKey];
-      } catch (e) {
-        console.error(e);
-        return Genders.OTHER;
-      }
-      return gender;
-    }
-}
-
-export enum Genders{
-    "MALE" = "male",
-    "FEMALE" = "female",
-    "OTHER" = "other",
 }

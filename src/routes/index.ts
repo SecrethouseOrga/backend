@@ -16,7 +16,7 @@ const router = Router();
 
 createServices().then(()=>{
   router.use(async (req, res, next) =>{
-    req.resPayload = <ResponsePayload>{status: 200, dataToSend: ""};
+    req.resPayload = <ResponsePayload>{status: 0, dataToSend: ""};
     RequestContext.create(services.bdd.entityManager, next);
   });
   router.use("/auth", authRoute(services.bdd));
@@ -26,11 +26,13 @@ createServices().then(()=>{
   router.use("/buzzs", buzzsRoute(services.bdd));
   router.use("/roomtypes", roomtypesRoute(services.bdd));
   router.use("/roomgame", roomgameRoute(services.bdd));
+  router.use("*", (req, res, next) => {
+    if (req.resPayload.status == 0) throw new RouteNotFoundError();
+    next();
+  });
   router.use(errorHandler(services.logger));
   router.use(sendResponse(services.logger));
-  router.use("*", (req, res, next) => {
-    throw new RouteNotFoundError();
-  });
+
 });
 
 export default router;

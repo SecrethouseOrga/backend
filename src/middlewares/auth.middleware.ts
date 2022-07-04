@@ -4,6 +4,7 @@ import {TokenUtils} from "../utils";
 
 export function tokenGeneration(req: Request, res: Response, next: NextFunction) {
   req.resPayload.dataToSend = TokenUtils.generateToken(req.currentUser);
+  console.log("coucou");
   next();
 }
 

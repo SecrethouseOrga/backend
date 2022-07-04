@@ -21,3 +21,160 @@
 {"level":"error","message":"type: BDD, entity: Event, op: Find, message: Event not found ({ id: -1 })"}
 {"level":"error","message":"type: BDD, entity: Buzz, op: Create, message: TypeError: Cannot read properties of null (reading 'secret')"}
 {"level":"error","message":"type: BDD, entity: Buzz, op: Find, message: Buzz not found ({ id: -1 })"}
+{"level":"error","message":"type: Middleware, method: OPTIONS, url: /register, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: OPTIONS, url: /register, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: OPTIONS, url: /register, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: POST, url: /register, message: Route Not Found"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into \"user\" (\"email\", \"password\", \"role\", \"username\") values ('sss', 'ss', 'viewer', 'sss') returning \"id\" - duplicate key value violates unique constraint \"user_username_unique\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /auth/register, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into \"user\" (\"email\", \"password\", \"role\", \"username\") values ('ddd', 'ddd', 'viewer', 'ddd') returning \"id\" - duplicate key value violates unique constraint \"user_username_unique\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /auth/register, message: Wrong Data"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Need an authorization token"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Need an authorization token"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /currentPlayer, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /rooms, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players, message: Route Not Found"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: DriverException: There was an error establishing an SSL connection"}
+{"level":"error","message":"type: Middleware, method: POST, url: /auth/login, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: User, op: Find, message: DriverException: There was an error establishing an SSL connection"}
+{"level":"error","message":"type: Middleware, method: POST, url: /auth/login, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 19, 'FEMALE', false, false, false, false, 10000, 'Hélène', 'J''aime les pates', false, 41) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 19, 'MALE', false, false, false, false, 10000, 'Hélène', 'J''aime les sourisf', false, 41) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 19, 'MALE', false, false, false, false, 10000, 'Hélène', 'J''aime les sourisf', false, 41) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 20, 'MALE', false, false, false, false, 10000, 'Hélène', 'J''aime les sourisf', false, 41) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 20, 'MALE', false, false, false, false, 10000, 'Hélène', 'J''aime les sourisf', false, 41) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/[object%20Object]/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/code/, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/[object%20Object]/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ code: '6NF9VK' })"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/6NF9VK, message: Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ code: '' })"}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ code: '6NZDVV' })"}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Not Found"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 4, 'FEMALE', false, false, false, false, 10000, 'Hélène', 'J''aime les chiens', false, 2) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 4, 'MALE', false, false, false, false, 10000, 'Hélène', 'J''aime les chiens', false, 2) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: CheckConstraintViolationException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 4, 'OTHER', false, false, false, false, 10000, 'Hélène', 'J''aime les chiens', false, 2) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - new row for relation \"player\" violates check constraint \"player_gender_check\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: User, op: Create, message: UniqueConstraintViolationException: insert into \"user\" (\"email\", \"password\", \"role\", \"username\") values ('aa', 'aa', 'viewer', 'aa') returning \"id\" - duplicate key value violates unique constraint \"user_username_unique\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /auth/register, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ code: '##6O7MLI' })"}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Not Found"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: DriverException: insert into \"game\" (\"code\", \"elimination_delay_qty\", \"elimination_delay_unity\", \"event_interval_qty\", \"event_interval_unity\", \"max_players\", \"owner_id\") values ('#6ODPQO', 30, 'h', 222, 'h', 2, 3) returning \"id\", \"max_players\", \"start_date\", \"end_date\" - permission denied for table game"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Game, op: Create, message: DriverException: insert into \"game\" (\"code\", \"elimination_delay_qty\", \"elimination_delay_unity\", \"event_interval_qty\", \"event_interval_unity\", \"max_players\", \"owner_id\") values ('#6OE8QO', 30, 'h', 222, 'h', 2, 3) returning \"id\", \"max_players\", \"start_date\", \"end_date\" - permission denied for table game"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: DriverException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 1, 'male', false, false, false, false, 10000, 'Vincent', 'J''aime les pates', false, 2) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - invalid input syntax for type smallint: \"male\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: DriverException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 1, 'male', false, false, false, false, 10000, 'Vincent', 'J''aime les pates', false, 1) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - invalid input syntax for type smallint: \"male\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: BDD, entity: Player, op: Create, message: DriverException: insert into \"player\" (\"avatar\", \"can_be_buzzed\", \"can_buzz\", \"game_id\", \"gender\", \"is_buzzed\", \"is_eliminated\", \"is_nominated\", \"is_ready\", \"jackpot\", \"name\", \"secret\", \"secret_discovered\", \"user_id\") values ('', true, true, 1, 'male', false, false, false, false, 10000, 'Vincent', 'J''aime les pates', false, 1) returning \"id\", \"jackpot\", \"avatar\", \"is_ready\", \"is_buzzed\", \"can_buzz\", \"can_be_buzzed\", \"is_nominated\", \"is_eliminated\", \"secret_discovered\" - invalid input syntax for type smallint: \"male\""}
+{"level":"error","message":"type: Middleware, method: POST, url: /players, message: Wrong Data"}
+{"level":"error","message":"type: Middleware, method: GET, url: /currentPlayer, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /buzz, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players/null, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players/null, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players/null, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players/null, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /players/null, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: GET, url: /currentPlayer, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /buzz, message: Route Not Found"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/0/players, message: id not valid"}
+{"level":"error","message":"type: Middleware, method: POST, url: /games, message: Access Denied"}
+{"level":"error","message":"type: BDD, entity: Game, op: Find, message: Game not found ({ code: '# 72CNAU' })"}
+{"level":"error","message":"type: Middleware, method: GET, url: /games/%2072CNAU, message: Not Found"}

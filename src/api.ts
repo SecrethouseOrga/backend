@@ -19,7 +19,7 @@ const swaggerDocument = require("./doc/swagger.json");
 
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = ["http://localhost:4200"];
+const allowedOrigins = ["http://localhost:4200", "https://secrethouse-front.herokuapp.com"];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,

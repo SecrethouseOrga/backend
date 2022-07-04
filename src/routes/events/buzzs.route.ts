@@ -16,7 +16,7 @@ export default function(bddService:BddService): Router {
 
   router.get("/:id", checkId, controller.getBuzz.bind(controller), returnData);
 
-  router.put("/:id", checkId, controller.updateBuzz.bind(controller), objectCreated);
+  router.put("/:id", authVerification, checkId, controller.updateBuzz.bind(controller), objectCreated);
 
   return router;
 }

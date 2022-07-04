@@ -36,6 +36,13 @@
       "description": "Everything about your buzzes"
     }
   ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "token",
+      "in": "header"
+    }
+  },
   "schemes": [
     "https"
   ],
@@ -133,6 +140,9 @@
         "tags": [
           "games"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Create a new game",
         "description": "",
         "operationId": "createGame",
@@ -388,6 +398,9 @@
         "tags": [
           "players"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Create a new player",
         "description": "",
         "operationId": "createPlayer",
@@ -472,6 +485,9 @@
         "tags": [
           "roomtypes"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Create a new room type",
         "description": "",
         "operationId": "createRoomType",
@@ -589,6 +605,9 @@
         "tags": [
           "roomgame"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Create a new room game",
         "description": "",
         "operationId": "createRoomGame",
@@ -626,25 +645,30 @@
       }
     },
     "/events": {
-      "post": {
+      "put": {
         "tags": [
           "events"
         ],
-        "summary": "Create a new event",
+        "security": [{
+          "Bearer": {}
+        }],
+        "summary": "Update an event",
         "description": "",
-        "operationId": "createEvent",
+        "operationId": "updateEvent",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "body",
-            "description": "Created event object",
+            "name": "id",
+            "in": "path",
+            "description": "ID of the event to update",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/EventData"
-            }
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
@@ -714,6 +738,9 @@
         "tags": [
           "buzzs"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Create a new buzz",
         "description": "",
         "operationId": "createBuzz",
@@ -796,6 +823,9 @@
         "tags": [
           "buzzs"
         ],
+        "security": [{
+          "Bearer": {}
+        }],
         "summary": "Update an existing buzz",
         "description": "",
         "operationId": "updateBuzz",
@@ -1145,20 +1175,6 @@
         }
       }
     },
-    "EventData": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "example": "Evenement mystère"
-        },
-        "gameId": {
-          "type": "integer",
-          "format": "int64",
-          "example": 1
-        }
-      }
-    },
     "Buzz": {
       "type": "object",
       "properties": {
@@ -1203,6 +1219,15 @@
     "BuzzData": {
       "type": "object",
       "properties": {
+        "content": {
+          "type": "string",
+          "example": "Evenement mystère"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
         "secret": {
           "type": "string",
           "example": "Il aime la pizza à l'ananas"

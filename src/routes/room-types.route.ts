@@ -15,9 +15,9 @@ export default function(bddService:BddService): Router {
 
   router.post("/", authVerification, controller.createRoomType.bind(controller), objectCreated);
 
-  router.get("/", authVerification, controller.getAllRoomTypes.bind(controller), returnData);
+  router.get("/", controller.getAllRoomTypes.bind(controller), returnData);
 
-  router.get("/:id", authVerification, checkId, controller.getRoomType.bind(controller), returnData);
+  router.get("/:id", checkId, controller.getRoomType.bind(controller), returnData);
 
   return router;
 }

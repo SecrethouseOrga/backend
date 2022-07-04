@@ -28,6 +28,8 @@ DB_HOST={Db host url}
 ```
 Vous trouverez un exemple à la racine du projet dans **.env.example**
 
+**Pour les besoin du rendu , les informations de connection à la bdd sont dans ce fichier**
+
 ## Base de données
 
 Touts les scripts se trouve dans **src/scripts**

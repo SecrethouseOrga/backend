@@ -850,3 +850,5 @@
 {"level":"info","message":"type: Response, method: POST, url: /auth/login, message: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhIiwiaWQiOjEsImlhdCI6MTY1Njk1OTIwMywiZXhwIjoxNjU3MDQ1NjAzfQ.MucUgCWQQ9dpeO8Bcu8rpQHRDwyqQL2nokexHxk6pbo\""}
 {"level":"info","message":"type: Response, method: POST, url: /games, message: \"#72Q9BI\""}
 {"level":"info","message":"type: Response, method: POST, url: /auth/login, message: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJiIiwiaWQiOjIsImlhdCI6MTY1Njk1OTI2NywiZXhwIjoxNjU3MDQ1NjY3fQ.VhupGwces8wp71MdlhWmEdvU5utnZ_Hz8idh3CYfLx0\""}
+{"level":"error","message":"type: Middleware, method: Get, url: /dummyUrl, message: Bad request"}
+{"level":"error","message":"type: Middleware, method: Get, url: /dummyUrl, message: Some dumb error"}

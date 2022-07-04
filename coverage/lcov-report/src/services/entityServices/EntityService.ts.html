@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/46</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>23/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/46</span>
+                <span class='fraction'>23/46</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,35 +125,35 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {EntityManager} from "@mikro-orm/postgresql";
 import {AnyEntity, EntityRepository, NotFoundError, ValidationError} from "@mikro-orm/core";
@@ -170,36 +170,36 @@ export class EntityService extends Service {
   protected em:EntityManager;
   protected repository: EntityRepository&lt;AnyEntity&gt;;
   protected entityName:string;
-  constructor(data: EntityServiceData, plainEntityName: string) {
-    super(data.entityName + "Service", data.logger);
-    this.em = data.entityManager;
-    this.entityName = plainEntityName;
-    this.repository = this.em.getRepository(data.entityName);
-  }
+<span class="fstat-no" title="function not covered" >  constructor(data: EntityServiceData, plainEntityName: string) {</span>
+<span class="cstat-no" title="statement not covered" >    super(data.entityName + "Service", data.logger);</span>
+<span class="cstat-no" title="statement not covered" >    this.em = data.entityManager;</span>
+<span class="cstat-no" title="statement not covered" >    this.entityName = plainEntityName;</span>
+<span class="cstat-no" title="statement not covered" >    this.repository = this.em.getRepository(data.entityName);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  protected handleOperationError(operation: BddOperation, e:any): BddError {
-    let error = e;
-    let msg = e.toString();
-    if (e instanceof ValidationError) {
-      error = &lt;ValidationError&gt; e;
-      msg = error.message;
-    }
-    this.logger.logError(this.logger.getBddOperationLog(operation, this.entityName, msg));
-    if (error instanceof NotFoundError) return new EntityNotFoundError(this.entityName);
-    else return new ValidationDataError(this.entityName);
-  }
+  protected <span class="fstat-no" title="function not covered" >handleOperationError(operation: BddOperation, e:any): BddError {</span>
+<span class="cstat-no" title="statement not covered" >    let error = e;</span>
+<span class="cstat-no" title="statement not covered" >    let msg = e.toString();</span>
+<span class="cstat-no" title="statement not covered" >    if (e instanceof ValidationError) {</span>
+<span class="cstat-no" title="statement not covered" >      error = &lt;ValidationError&gt; e;</span>
+<span class="cstat-no" title="statement not covered" >      msg = error.message;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.logError(this.logger.getBddOperationLog(operation, this.entityName, msg));</span>
+<span class="cstat-no" title="statement not covered" >    if (error instanceof NotFoundError) return new EntityNotFoundError(this.entityName);</span>
+<span class="cstat-no" title="statement not covered" >    else return new ValidationDataError(this.entityName);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  get EntityName() {
-    return this.entityName;
-  }
+<span class="fstat-no" title="function not covered" >  get EntityName() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.entityName;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  async deleteById(id:number) {
-    try {
-      return await this.repository.nativeDelete({id: id});
-    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (e) {</span>
+<span class="fstat-no" title="function not covered" >  async deleteById(id:number) {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      return await this.repository.nativeDelete({id: id});</span>
+<span class="cstat-no" title="statement not covered" >    } catch (e) {</span>
 <span class="cstat-no" title="statement not covered" >      throw this.handleOperationError(BddOperation.DELETE, e);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-  }
+<span class="cstat-no" title="statement not covered" >  }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -208,7 +208,7 @@ export class EntityService extends Service {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jul 02 2022 19:31:05 GMT+0200 (Central European Summer Time)
+                at Mon Jul 04 2022 21:29:27 GMT+0200 (heure d’été d’Europe centrale)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

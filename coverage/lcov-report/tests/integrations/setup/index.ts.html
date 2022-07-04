@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">44.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>13/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">44.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>13/29</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -103,26 +103,26 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export * from "./route.setup";
@@ -134,26 +134,26 @@ import {
   UserData,
 } from "../../../src/types/request/bodyData";
 &nbsp;
-export function getPlayerData(name:string, secret:string, gameCode:string): PlayerData {
-  return &lt;PlayerData&gt;{secret: secret, name: name, gender: "male", gameCode: gameCode};
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function getPlayerData(name:string, secret:string, gameCode:string): PlayerData {</span></span>
+<span class="cstat-no" title="statement not covered" >  return &lt;PlayerData&gt;{secret: secret, name: name, gender: "male", gameCode: gameCode};</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function getUserData(email:string, username:string): UserData {
-  return &lt;UserData&gt;{email: email, username: username, password: "!@pass"};
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function getUserData(email:string, username:string): UserData {</span></span>
+<span class="cstat-no" title="statement not covered" >  return &lt;UserData&gt;{email: email, username: username, password: "!@pass"};</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function getGameData(): GameData {
-  return &lt;GameData&gt;{maxPlayers: 2, eventIntervalQty: 100, eliminationDelayQty: 100,
-    eliminationDelayUnity: "h", eventIntervalUnity: "h"};
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function getGameData(): GameData {</span></span>
+<span class="cstat-no" title="statement not covered" >  return &lt;GameData&gt;{maxPlayers: 2, eventIntervalQty: 100, eliminationDelayQty: 100,</span>
+<span class="cstat-no" title="statement not covered" >    eliminationDelayUnity: "h", eventIntervalUnity: "h"};</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function getEventData(gameId:number): EventData {
-  return &lt;EventData&gt;{content: "Je suis un event", gameId: gameId};
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function getEventData(gameId:number): EventData {</span></span>
+<span class="cstat-no" title="statement not covered" >  return &lt;EventData&gt;{content: "Je suis un event", gameId: gameId};</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export function getRoomTypeData(name:string): RoomTypeData {
-  return &lt;RoomTypeData&gt;{name: name, isSecret: false};
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function getRoomTypeData(name:string): RoomTypeData {</span></span>
+<span class="cstat-no" title="statement not covered" >  return &lt;RoomTypeData&gt;{name: name, isSecret: false};</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
@@ -163,7 +163,7 @@ export function getRoomTypeData(name:string): RoomTypeData {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jul 02 2022 19:31:05 GMT+0200 (Central European Summer Time)
+                at Mon Jul 04 2022 21:29:27 GMT+0200 (heure d’été d’Europe centrale)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

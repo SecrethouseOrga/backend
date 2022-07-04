@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.17% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>68/78</span>
+                <span class='fraction'>54/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.17% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>68/78</span>
+                <span class='fraction'>54/60</span>
             </div>
         
             
@@ -123,25 +123,7 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -192,14 +174,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -208,18 +182,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Entity, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {User} from "./User";
 import {Game} from "./Game";
 import {PlayerData} from "../types/request/bodyData/PlayerData";
@@ -262,7 +226,7 @@ export class Player {
     @Property({default: false})
       secretDiscovered = false;
 &nbsp;
-    @Enum(() =&gt; Genders)
+    @Property()
       gender!: string;
 &nbsp;
     @ManyToOne()
@@ -271,31 +235,13 @@ export class Player {
     @ManyToOne()
       game: Game;
 &nbsp;
-    constructor(playerData: PlayerData, user: User, game: Game) {
-      this.name = playerData.name;
-      this.secret = playerData.secret;
-      this.user = user;
-      this.game = game;
-      this.gender = playerData.gender;
-    }
-&nbsp;
-    static <span class="fstat-no" title="function not covered" >castToGenders(value: string) : Genders {</span>
-<span class="cstat-no" title="statement not covered" >      let gender: Genders;</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        const genderKey: keyof typeof Genders = value as keyof typeof Genders;</span>
-<span class="cstat-no" title="statement not covered" >        gender = Genders[genderKey];</span>
-<span class="cstat-no" title="statement not covered" >      } catch (e) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(e);</span>
-<span class="cstat-no" title="statement not covered" >        return Genders.OTHER;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return gender;</span>
+<span class="fstat-no" title="function not covered" >    constructor(playerData: PlayerData, user: User, game: Game) {</span>
+<span class="cstat-no" title="statement not covered" >      this.name = playerData.name;</span>
+<span class="cstat-no" title="statement not covered" >      this.secret = playerData.secret;</span>
+<span class="cstat-no" title="statement not covered" >      this.user = user;</span>
+<span class="cstat-no" title="statement not covered" >      this.game = game;</span>
+<span class="cstat-no" title="statement not covered" >      this.gender = playerData.gender.toString();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-}
-&nbsp;
-export enum Genders{
-    "MALE" = "male",
-    "FEMALE" = "female",
-    "OTHER" = "other",
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -304,7 +250,7 @@ export enum Genders{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jul 02 2022 19:31:05 GMT+0200 (Central European Summer Time)
+                at Mon Jul 04 2022 21:29:27 GMT+0200 (heure d’été d’Europe centrale)
             </div>
         <script src="../../prettify.js"></script>
         <script>

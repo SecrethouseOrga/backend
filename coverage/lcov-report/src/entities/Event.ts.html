@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.35% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>58/78</span>
+                <span class='fraction'>52/78</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.35% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>58/78</span>
+                <span class='fraction'>52/78</span>
             </div>
         
             
@@ -173,25 +173,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -206,19 +194,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {EventData} from "../types/request/bodyData";
 import {Game} from "./Game";
@@ -232,7 +232,7 @@ export class Event {
     @Property()
       createdAt: Date = new Date();
 &nbsp;
-    @Property({onUpdate: () =&gt; new Date()})
+    @Property({onUpdate: <span class="fstat-no" title="function not covered" >() =&gt; new Date()}</span>)
       updatedAt: Date = new Date();
 &nbsp;
     @Property()
@@ -250,13 +250,13 @@ export class Event {
     @Enum(() =&gt; EventStatus)
       status!: string;
 &nbsp;
-    constructor(eventData: EventData, player: Player, game: Game, eventType: EventTypes) {
-      this.content = eventData.content;
-      this.player = player;
-      this.game = game;
-      this.type = eventType;
-      this.status = EventStatus.STARTED;
-    }
+<span class="fstat-no" title="function not covered" >    constructor(eventData: EventData, player: Player, game: Game, eventType: EventTypes) {</span>
+<span class="cstat-no" title="statement not covered" >      this.content = eventData.content;</span>
+<span class="cstat-no" title="statement not covered" >      this.player = player;</span>
+<span class="cstat-no" title="statement not covered" >      this.game = game;</span>
+<span class="cstat-no" title="statement not covered" >      this.type = eventType;</span>
+<span class="cstat-no" title="statement not covered" >      this.status = EventStatus.STARTED;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // @FIXME : Si la requête ne contient pas ces types, ça renvoie une erreur vide de sens et ne remplit pas type/status
     static <span class="fstat-no" title="function not covered" >castToEventTypes(value: string): EventTypes {</span>
@@ -304,7 +304,7 @@ export enum EventStatus{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jul 02 2022 19:31:05 GMT+0200 (Central European Summer Time)
+                at Mon Jul 04 2022 21:29:27 GMT+0200 (heure d’été d’Europe centrale)
             </div>
         <script src="../../prettify.js"></script>
         <script>

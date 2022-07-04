@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">72.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/58</span>
+                <span class='fraction'>42/58</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">72.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/58</span>
+                <span class='fraction'>42/58</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -153,18 +153,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -173,12 +161,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Entity, Enum, ManyToOne, PrimaryKey, Property} from "@mikro-orm/core";
 import {BuzzData} from "../types/request/bodyData";
 import {Event} from "./Event";
@@ -201,7 +201,7 @@ export class Buzz {
     @Property()
       createdAt: Date = new Date();
 &nbsp;
-    @Property({onUpdate: () =&gt; new Date()})
+    @Property({onUpdate: <span class="fstat-no" title="function not covered" >() =&gt; new Date()}</span>)
       updatedAt: Date = new Date();
 &nbsp;
     @Property()
@@ -210,13 +210,13 @@ export class Buzz {
     @Enum(() =&gt; BuzzStatus)
       status!: string;
 &nbsp;
-    constructor(buzzData: BuzzData, buzzer: Player, target: Player, event: Event) {
-      this.buzzer = buzzer;
-      this.event = event;
-      this.target = target;
-      this.secret = buzzData.secret;
-      this.status = BuzzStatus.PENDING;
-    }
+<span class="fstat-no" title="function not covered" >    constructor(buzzData: BuzzData, buzzer: Player, target: Player, event: Event) {</span>
+<span class="cstat-no" title="statement not covered" >      this.buzzer = buzzer;</span>
+<span class="cstat-no" title="statement not covered" >      this.event = event;</span>
+<span class="cstat-no" title="statement not covered" >      this.target = target;</span>
+<span class="cstat-no" title="statement not covered" >      this.secret = buzzData.secret;</span>
+<span class="cstat-no" title="statement not covered" >      this.status = BuzzStatus.PENDING;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     static <span class="fstat-no" title="function not covered" >castToBuzzStatus(value: string): BuzzStatus {</span>
 <span class="cstat-no" title="statement not covered" >      let status: BuzzStatus = BuzzStatus.PENDING;</span>
@@ -244,7 +244,7 @@ export enum BuzzStatus{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jul 02 2022 19:31:05 GMT+0200 (Central European Summer Time)
+                at Mon Jul 04 2022 21:29:27 GMT+0200 (heure d’été d’Europe centrale)
             </div>
         <script src="../../prettify.js"></script>
         <script>

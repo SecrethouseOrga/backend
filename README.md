@@ -13,6 +13,8 @@ Cette commande créera un dossier **dist/**, dans lequel se trouve toutes les so
 
 ### Test
 **Attention:** Les tests peuvent ne pas fonctionner tous d'un coup, lancez les tests un par un.
+
+Si vous les avez lancé tous d'un coup et que ça n'a pas fonctionner recrée la base de donnée (cf. Base de données)
 > npm run test
 
 
